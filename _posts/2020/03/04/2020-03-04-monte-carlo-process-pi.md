@@ -115,7 +115,11 @@ The result comes out as:
 
 ![img2](/assets/images/post-2020-03-04-2.png)
 
+***
+
+Code in jupyter notebook available at my [github][github]
 
 
 [monte-carlo]: https://en.wikipedia.org/wiki/Monte_Carlo_method
+[github]: https://github.com/dongminkim0220/QuantEconProjects/blob/master/monte_carlo.ipynb
 
