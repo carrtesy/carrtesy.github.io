@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 
 The result comes out as:
-![img1](https://github.com/dongminkim0220/dongminkim0220.github.io/blob/master/assets/images/_postimages/2020/03/04/2020-03-04-1.png)
+![img1](assets/images/post-2020-03-04-1.png)
 
 
 let's setup the initial variables.
@@ -111,7 +111,8 @@ plt.show()
 
 
 The result comes out as:
-![img2](/assets/images/_postimages/2020/03/04/2020-03-04-2.png)
+![img2](assets/images/post-2020-03-04-2.png)
+
 
 
 [monte-carlo]: https://en.wikipedia.org/wiki/Monte_Carlo_method
