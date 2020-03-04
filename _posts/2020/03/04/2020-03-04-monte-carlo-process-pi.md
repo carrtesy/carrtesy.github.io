@@ -48,46 +48,11 @@ print(π)
 ​```
 
 The result comes out as:
-![img1](./2020-03-04-1.png)
+![]
 
-## Version 2
-We want to see the converging process. 
-
-'''python
-import numpy as np
-import matplotlib.pyplot as plt
-import math
-
-def monteCarloPi(trial):
-    cnt = 0
-    
-    for i in range(trial):
-        x = np.random.uniform(-1,1)
-        y = np.random.uniform(-1,1)
-        
-        if (x**2 + y**2 < 1):
-           cnt = cnt+1
-    
-    return (cnt/trial)*4
-
-def plotApproxProcess(x, ϵ, trial):
-    plt.hlines(π, 1, trial, colors='black', linestyles='solid', label='π')
-    for i in range(1, trial+1):
-        result = monteCarloPi(i)
-        if abs(result - x) < ϵ:
-            plt.scatter(i, result, s = 1, color = "blue")
-        else:
-            plt.scatter(i, result, s = 1, color = "red")
-    
-π = math.pi
-ϵ = 0.1
-plotApproxProcess(π, ϵ, 1000)
-plt.show()
-'''
-
-The result comes out as:
-![img2](./2020-03-04-2.png)
-
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [monte-carlo]: https://en.wikipedia.org/wiki/Monte_Carlo_method
-
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
