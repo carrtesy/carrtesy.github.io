@@ -1,20 +1,20 @@
 ---
-title: "Monte CarloProcess: PI approximation"
+title: "Monte CarloProcess: 𝜋 approximation"
 date: 2020-03-04
 categories: montecarlo
 ---
-
-*Monte Carlo Process to estimate 𝜋 with visualization*
 
 The task is to compute an approximation to 𝜋 using [Monte Carlo][monte-carlo].
 
 Version 1: First we draw unit circle to the coordinate and plot the dots.
 
 
-​```python
+​```
 import numpy as np
 import matplotlib.pyplot as plt
 ```
+
+
 
 The result comes out as:
 ![img1](./2020-03-04-1.png)
