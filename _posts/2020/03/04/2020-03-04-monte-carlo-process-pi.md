@@ -14,30 +14,28 @@ import matplotlib.pyplot as plt
 {% endhighlight %}
 
 
-
-
 The result comes out as:
-![img1](./2020-03-04-1.png)
+![img1](/assets/images/_postimages/2020/03/04/2020-03-04-1.png)
 
 
 let's setup the initial variables.
 
-```python
+{% highlight python %}
 trial = 1000
 inCircle = 0
-```
+{% endhighlight %}
 
 And draw the unit circle to the plt.
 
-```python
+{% highlight python %}
 circle = plt.Circle((0, 0), radius = 1, color='black', fill=False)
 ax = plt.gca()
 ax.add_artist(circle)
-```
+{% endhighlight %}
 
 And then, plot the random coordinate.
 
-```python
+{% highlight python %}
 for i in range(trial):
 	x = np.random.uniform(-1,1)
 	y = np.random.uniform(-1,1)
@@ -47,23 +45,23 @@ for i in range(trial):
 		plt.scatter(x, y, s = 1, color = "black")
 	else:
 		plt.scatter(x, y, s = 1, color = "blue")   
-```
+{% endhighlight %}
 
 Show the canvas and calculate the answer.        
 
-```python
+{% highlight python %}
 	plt.axis([-1, 1, -1, 1])
 	plt.show()
 	ratio = inCircle/trial
 	π = ratio * 4
 	print(π)
-​```
+{% endhighlight %}
 
 
 
 Version 2: We want to see the converging process. 
 
-'''python
+{% highlight python %}
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -95,10 +93,10 @@ def plotApproxProcess(x, ϵ, trial):
 plotApproxProcess(π, ϵ, 1000)
 plt.show()
 
-'''
+{% endhighlight %}
 
 The result comes out as:
-![img2](./2020-03-04-2.png)
+![img2](/assets/images/_postimages/2020/03/04/2020-03-04-2.png)
 
 
 [monte-carlo]: https://en.wikipedia.org/wiki/Monte_Carlo_method
