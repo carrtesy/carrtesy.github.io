@@ -1,5 +1,5 @@
 ---
-title: "Monte CarloProcess: 𝜋 approximation"
+title: "Monte Carlo Process: 𝜋 approximation"
 date: 2020-03-04
 categories: QuantEcon montecarlo
 ---
