@@ -8,22 +8,11 @@ The task is to compute an approximation to 𝜋 using [Monte Carlo][monte-carlo]
 
 Version 1: First we draw unit circle to the coordinate and plot the dots.
 
-{% highlight ruby %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
-{% endhighlight %}
-
-
-
-​```
+{% highlight python %}
 import numpy as np
 import matplotlib.pyplot as plt
-```
+{% endhighlight %}
+
 
 
 
