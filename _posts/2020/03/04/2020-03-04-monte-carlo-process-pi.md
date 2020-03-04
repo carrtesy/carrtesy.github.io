@@ -50,11 +50,11 @@ for i in range(trial):
 Show the canvas and calculate the answer.        
 
 {% highlight python %}
-	plt.axis([-1, 1, -1, 1])
-	plt.show()
-	ratio = inCircle/trial
-	π = ratio * 4
-	print(π)
+plt.axis([-1, 1, -1, 1])
+plt.show()
+ratio = inCircle/trial
+π = ratio * 4
+print(π)
 {% endhighlight %}
 
 
@@ -62,7 +62,6 @@ Show the canvas and calculate the answer.
 Version 2: We want to see the converging process. 
 
 {% highlight python %}
-
 import numpy as np
 import matplotlib.pyplot as plt
 import math
@@ -92,8 +91,8 @@ def plotApproxProcess(x, ϵ, trial):
 
 plotApproxProcess(π, ϵ, 1000)
 plt.show()
-
 {% endhighlight %}
+
 
 The result comes out as:
 ![img2](/assets/images/_postimages/2020/03/04/2020-03-04-2.png)
