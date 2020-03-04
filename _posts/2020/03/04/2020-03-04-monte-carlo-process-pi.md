@@ -4,9 +4,12 @@ date: 2020-03-04
 categories: QuantEcon montecarlo
 ---
 
+
 The task is to compute an approximation to 𝜋 using [Monte Carlo][monte-carlo].
 
-**Version 1**: First we draw unit circle to the coordinate and plot the dots.
+
+***
+**Version 1**: Draw unit circle to the coordinate and plot the dots.
 
 {% highlight python %}
 import numpy as np
@@ -55,6 +58,7 @@ ratio = inCircle/trial
 The result comes out as:
 ![img1](/assets/images/post-2020-03-04-1.png)
 
+***
 **Version 2**: We want to see the converging process. 
 
 Basic setup is as follows:
