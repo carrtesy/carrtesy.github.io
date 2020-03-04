@@ -14,10 +14,6 @@ import matplotlib.pyplot as plt
 {% endhighlight %}
 
 
-The result comes out as:
-![img1](/assets/images/post-2020-03-04-1.png)
-
-
 let's setup the initial variables.
 
 {% highlight python %}
@@ -53,11 +49,11 @@ Show the canvas and calculate the answer.
 plt.axis([-1, 1, -1, 1])
 plt.show()
 ratio = inCircle/trial
-π = ratio * 4
-print(π)
+π = ratio * 4 # result is here
 {% endhighlight %}
 
-
+The result comes out as:
+![img1](/assets/images/post-2020-03-04-1.png)
 
 **Version 2**: We want to see the converging process. 
 
