@@ -56,6 +56,7 @@ ratio = inCircle/trial
 {% endhighlight %}
 
 The result comes out as:
+
 ![img1](/assets/images/post-2020-03-04-1.png)
 
 ***
@@ -111,6 +112,7 @@ plt.show()
 
 
 The result comes out as:
+
 ![img2](/assets/images/post-2020-03-04-2.png)
 
 
