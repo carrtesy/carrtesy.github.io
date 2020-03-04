@@ -1,12 +1,12 @@
 ---
 title: "Monte CarloProcess: 𝜋 approximation"
 date: 2020-03-04
-categories: montecarlo
+categories: QuantEcon montecarlo
 ---
 
 The task is to compute an approximation to 𝜋 using [Monte Carlo][monte-carlo].
 
-Version 1: First we draw unit circle to the coordinate and plot the dots.
+**Version 1**: First we draw unit circle to the coordinate and plot the dots.
 
 {% highlight python %}
 import numpy as np
@@ -59,13 +59,19 @@ print(π)
 
 
 
-Version 2: We want to see the converging process. 
+**Version 2**: We want to see the converging process. 
+
+Basic setup is as follows:
 
 {% highlight python %}
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+{% endhighlight %}
 
+Firstly, lets define function that does montecarlo processes to estimate pi.
+
+{% highlight python %}
 def monteCarloPi(trial):
 	cnt = 0
     
@@ -77,7 +83,13 @@ def monteCarloPi(trial):
 			cnt = cnt+1
     
 	return (cnt/trial)*4
+{% endhighlight %}
 
+And let's define another function to plot the result. 
+if the value is within ϵ, let's plot the point in blue color.
+else, let's do it in red. 
+
+{% highlight python %}
 def plotApproxProcess(x, ϵ, trial):
 	plt.hlines(π, 1, trial, colors='black', linestyles='solid', label='π')
 	for i in range(1, trial+1):
@@ -88,7 +100,11 @@ def plotApproxProcess(x, ϵ, trial):
 			plt.scatter(i, result, s = 1, color = "red")
 	π = math.pi
 	ϵ = 0.1
+{% endhighlight %}
 
+
+And show the result. 
+{% highlight python %}
 plotApproxProcess(π, ϵ, 1000)
 plt.show()
 {% endhighlight %}
