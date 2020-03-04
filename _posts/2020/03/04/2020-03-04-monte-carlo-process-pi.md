@@ -99,13 +99,13 @@ def plotApproxProcess(x, ϵ, trial):
 			plt.scatter(i, result, s = 1, color = "blue")
 		else:
 			plt.scatter(i, result, s = 1, color = "red")
-	π = math.pi
-	ϵ = 0.1
 {% endhighlight %}
 
 
 And show the result. 
 {% highlight python %}
+π = math.pi
+ϵ = 0.1
 plotApproxProcess(π, ϵ, 1000)
 plt.show()
 {% endhighlight %}
