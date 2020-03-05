@@ -1,12 +1,13 @@
 ---
 title: "Monte Carlo Process: 𝜋 approximation"
 date: 2020-03-04
-categories: QuantEcon montecarlo
+categories: quantecon montecarlo python
 ---
 
 
 The task is to compute an approximation to 𝜋 using [Monte Carlo][monte-carlo].
 
+*Python* is used for representation.
 
 ***
 **Version 1**: Draw unit circle to the coordinate and plot the dots.
