@@ -118,7 +118,7 @@ The result comes out as:
 
 ***
 
-Code in jupyter notebook available at my [github][github].
+Code in jupyter notebook is available at my [github][github].
 
 
 [monte-carlo]: https://en.wikipedia.org/wiki/Monte_Carlo_method
