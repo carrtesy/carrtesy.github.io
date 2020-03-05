@@ -91,7 +91,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "/assets/images/coding-computer-data-depth-of-field-577585.jpg"
+og_image                 :
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
