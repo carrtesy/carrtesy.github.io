@@ -232,7 +232,7 @@ int main(void)
 	
 	cout << "Result: " << result << endl;
 }
-
+{% endhighlight %}
 ***
 
 Compile & implement the code as:
