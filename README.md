@@ -7,3 +7,5 @@ Available @ [dongminkim0220.github.io](https://dongminkim0220.github.io/)
   - post for monte carlo process for pi
 - 2020-03-05
   - cobweb process modeling
+- 2020-03-08
+  - calculator ver 1
