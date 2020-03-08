@@ -237,7 +237,7 @@ int main(void)
 
 Compile & implement the code as:
 ```
-/Calculator$ g++ -o calc
+/Calculator$ g++ -o calc Calculator.cpp
 /Calculator$ ./calc
 ```
 
