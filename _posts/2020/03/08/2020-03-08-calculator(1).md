@@ -1,5 +1,5 @@
 ---
-title: "Let's build a calculator(1) - Basic Arithmetic Operation for 1 digit number"
+title: "Let's build a calculator(1) - Basic & Useless Calculator"
 date: 2020-03-08
 categories: calculator stack data_structure c++
 ---
@@ -7,9 +7,11 @@ categories: calculator stack data_structure c++
 
 The task is to devise a calculator.
 
-Our calculator has functions of:
+Our calculator supports:
 1) 1 digit operand
 2) supporting basic arithmetic operations(+, -, *, /)
+
+It seems quite **useless**, but let's do easier things first.
 
 *C++* is used for representation. Let's start.
 
@@ -167,9 +169,10 @@ string parseString(string s)
 
 {% endhighlight %}
 
-So if input is **"(1+2)*7"**, output is **"12+7*"**
+So if input is (1+2)*7, output is 12+7*.
 
-### Postfix notation evaluator
+
+### Postfix Notation Evaluator
 
 We should actually be able to calcuate the result from postfix notation.
 
@@ -211,7 +214,7 @@ double evaluatePostfix(string s)
 
 {% endhighlight %}
 
-### Let's test those out.
+### Testing
 
 {% highlight cpp %}
 
@@ -233,12 +236,13 @@ int main(void)
 	cout << "Result: " << result << endl;
 }
 {% endhighlight %}
+
 ***
 
 Compile & implement the code as:
 ```
-/Calculator$ g++ -o calc Calculator.cpp
-/Calculator$ ./calc
+g++ -o calc Calculator.cpp
+./calc
 ```
 
 Result is:
@@ -249,7 +253,7 @@ Input your formula to evalute.
 Result: 21
 ```
 
-Code in jupyter notebook is available at my [github][github].
+Code is available at my [github][github].
 
 
 [infix]: http://www.cs.man.ac.uk/~pjj/cs212/fix.html
