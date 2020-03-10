@@ -169,7 +169,7 @@ string parseString(string s)
 
 {% endhighlight %}
 
-So if input is (1+2)*7, output is 12+7*.
+So if input is "(1+2)*7", output is "12+7*".
 
 
 ### Postfix Notation Evaluator
