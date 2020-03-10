@@ -1,11 +1,19 @@
 ---
 title: "Let's build a calculator(1) - Basic & Useless Calculator"
 date: 2020-03-08
-categories: calculator stack data_structure c++
+categories:
+ - calculator 
+
+tags:
+ - calculator
+ - stack
+ - data structure
+ - c++
+
 ---
 
 
-The task is to devise a calculator.
+The task is to devise a "basic" calculator.
 
 Our calculator supports:
 1) 1 digit operand
