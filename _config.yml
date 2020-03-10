@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Dongmin Kim"
 title_separator          : "-"
-subtitle                 : "ver 1.0"
+subtitle                 : ""
 name                     : "Dongmin Kim"
 description              : "Website for Dongmin Kim"
 url                      : "https://dongminkim0220.github.io"
@@ -26,7 +26,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "dongminkim0220/dongminkim0220.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/home.svg"
-masthead_title           : "DMK"
+masthead_title           : ""
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 
