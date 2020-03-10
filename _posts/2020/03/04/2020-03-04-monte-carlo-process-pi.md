@@ -1,6 +1,8 @@
 ---
 title: "Monte Carlo Process: 𝜋 approximation"
+
 date: 2020-03-04
+
 categories: 
 	- monte carlo process
 tags:
