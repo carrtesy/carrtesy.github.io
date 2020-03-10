@@ -10,7 +10,6 @@ tags:
  - quantecon
  - python
 
-
 ---
 
 
