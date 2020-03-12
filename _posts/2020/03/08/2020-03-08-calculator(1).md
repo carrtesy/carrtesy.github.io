@@ -457,7 +457,7 @@ g++ -o calc Calculator.cpp
 
 Result is:
 ```
-Calculater Ver1!
+Calculator Ver1!
 Input your formula to evalute. Type 'exit' to terminate
 1+2
 Result: 3
