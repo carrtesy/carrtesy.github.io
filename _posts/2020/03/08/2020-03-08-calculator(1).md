@@ -76,14 +76,10 @@ int opPriority(char c)
 {
 	switch(c)
 	{
-		case '(':
-			return 0;
 		case '+': case '-':
 			return 1;
 		case '*': case '/':
 			return 2;
-		case ')':
-			return 100;
 	}
 	return 0;
 }
@@ -459,6 +455,7 @@ g++ -o calc Calculator.cpp
 ./calc
 ```
 
+Result is:
 ```
 Calculater Ver1!
 Input your formula to evalute. Type 'exit' to terminate
@@ -476,7 +473,6 @@ Result: 1.66667
 Input your formula to evalute. Type 'exit' to terminate
 exit
 Program Ended
-
 ```
 
 
