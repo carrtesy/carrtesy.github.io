@@ -16,13 +16,11 @@ tags:
 
 This post is a combination of useful tools in C, C++ programming
 
-***
 Index
-### gcc
-### gdb
-### vim
+- ### gcc
+- ### gdb
+- ### vim
 
-***
 
 ### gcc
 
@@ -196,9 +194,24 @@ Vim modes are:
 - visual
 - exit
 
-normal mode: type Esc
+normal mode: type "Esc"
 ![v1](./assets/images/post-2020-03-18-v1.png)
 
+input mode: change into normal mode first, and,
+type "a" to append
+type "i" to insert
+![v2](./assets/images/post-2020-03-18-v2.png)
 
+exit mode: change into normal mode first, and, type ":"
+":w" to write(save) file
+":q" to quit
+":wq" to write and quit
+![v3](./assets/images/post-2020-03-18-v3.png)
 
+To copy lines, 
+change to normal mode by typing "Esc",
+and type "yy" to copy single line,
+Or to copy multiple lines, for example, 10 lines,  
+type "10", and type "yy"
+![v4](./assets/images/post-2020-03-18-v4.png)
 
