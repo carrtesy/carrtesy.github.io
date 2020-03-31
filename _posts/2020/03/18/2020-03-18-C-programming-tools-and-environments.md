@@ -127,10 +127,43 @@ Reading symbols from ./gdbmain...done.
 
 ```
 
-"b number" to set breakpoint
+"info b" to see breakpoints
+```
+(gdb) info b
+Num     Type           Disp Enb Address    What
+1       breakpoint     keep n   0x80104b80 in syscall at syscall.c:144
+	breakpoint already hit 158 times
+2       breakpoint     keep y   0x80105a30 in sys_getnice at sysproc.c:95
+3       breakpoint     keep y   0x801046b0 x86.h:126
+```
+
+"b (number)" to set breakpoint
 ```
 (gdb) b 5
 Breakpoint 1 at 0x652: file gdbmain.c, line 5.
+```
+
+"b (func)" to set breakpoint at current file's function
+```
+(gdb) b main
+Breakpoint 1 at 0x80102fc0: file main.c, line 19.
+```
+
+"b (file):(func or line)" to set breakpoint in specific file
+```
+
+"disable br (num)" to disable breakpoints
+```
+(gdb) disable br 1
+(gdb) disable br 3
+(gdb) info b
+Num     Type           Disp Enb Address    What
+1       breakpoint     keep n   0x80104b80 in syscall at syscall.c:144
+	breakpoint already hit 158 times
+2       breakpoint     keep y   0x80105a30 in sys_getnice at sysproc.c:95
+3       breakpoint     keep n   0x801046b0 x86.h:126
+```
+
 ```
 
 "r" to run program
@@ -158,8 +191,26 @@ $1 = 10
 $2 = 0
 ```
 
-"quit" to t(gdb) quit
-urn off
+"target remote :xxxxx" to access another gdb executing console
+```
+$ gdb
+(gdb) target remote :26000
+Remote debugging using :26000
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x0000fff0 in ?? ()
+```
+
+"file kernel" to load
+```
+(gdb) file kernel
+A program is being debugged already.
+Are you sure you want to change the file? (y or n) y
+Reading symbols from kernel...done.
+```
+
+
+"quit" to turn off
 ```
 (gdb) quit
 ```
