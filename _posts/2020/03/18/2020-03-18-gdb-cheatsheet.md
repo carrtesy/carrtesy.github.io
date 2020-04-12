@@ -100,9 +100,6 @@ Breakpoint 1 at 0x652: file gdbmain.c, line 5.
 Breakpoint 1 at 0x80102fc0: file main.c, line 19.
 ```
 
-"b (file):(func or line)" to set breakpoint in specific file
-```
-
 "disable br (num)" to disable breakpoints
 ```
 (gdb) disable br 1
@@ -113,8 +110,6 @@ Num     Type           Disp Enb Address    What
 	breakpoint already hit 158 times
 2       breakpoint     keep y   0x80105a30 in sys_getnice at sysproc.c:95
 3       breakpoint     keep n   0x801046b0 x86.h:126
-```
-
 ```
 
 "r" to run program
