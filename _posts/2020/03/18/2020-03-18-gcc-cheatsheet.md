@@ -42,6 +42,11 @@ gcc -o main main.c
 Hello World!
 ```
 
+- redirection
+```
+./a.out < input.txt
+```
+
 - gdb compile
 ```
 gcc -g -o main main.c
@@ -49,3 +54,4 @@ gcc -g -o main main.c
 ```
 gdb ./main
 ```
+

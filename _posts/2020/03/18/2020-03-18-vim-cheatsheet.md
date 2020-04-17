@@ -62,3 +62,7 @@ Or to copy multiple lines, for example, 10 lines,
 type "10", and type "yy"
 ![v4](/assets/images/post-2020-03-18-v4.png)
 
+"%" or (shift + 5) to go to parenthesis that is matched
+![v5](/assets/images/post-2020-03-18-v5.png)
+![v6](/assets/images/post-2020-03-18-v6.png)
+

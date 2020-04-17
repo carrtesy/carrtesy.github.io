@@ -155,6 +155,11 @@ Are you sure you want to change the file? (y or n) y
 Reading symbols from kernel...done.
 ```
 
+"r < (input file)" for redirection
+```
+(gdb) r < input.txt
+```
+
 
 "quit" to turn off
 ```
