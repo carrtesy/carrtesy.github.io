@@ -1,11 +1,17 @@
 ---
 title: "Problem Solving Lists"
+
 date: 2020-07-25
+
+last_modified_at: 2020-07-27
+
 categories:
  - problem solvings 
 
 tags:
- - git
+ - Data Structures
+ - Math
+ - Dynamic Programming
 ---
 
 
@@ -94,4 +100,14 @@ My Problem Solving Lists
 
 *Dynamic Programming 1*
 - [Make it to 1](https://www.acmicpc.net/problem/1463)
+
+- [2XN tiling](https://www.acmicpc.net/problem/11726)
+	- <http://boj.kr/d4999cadd13e4ab9aba7c0faa6d5cc61> **done**
+
+- [2XN tiling 2](https://www.acmicpc.net/problem/11727)
+	- <http://boj.kr/caa3f9ef39174abb8b43ed9c8699903d> **done**
+
+- [Make N from 1, 2, 3](https://www.acmicpc.net/problem/9095)
+	- <http://boj.kr/057da7f153124ee08c4716000d0c30f5> **done**
+
 
