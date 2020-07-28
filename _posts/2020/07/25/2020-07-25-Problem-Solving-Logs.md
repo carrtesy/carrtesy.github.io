@@ -110,4 +110,7 @@ My Problem Solving Lists
 - [Make N from 1, 2, 3](https://www.acmicpc.net/problem/9095)
 	- <http://boj.kr/057da7f153124ee08c4716000d0c30f5> **done**
 
+- [Card Purchase](https://www.acmicpc.net/problem/11052)
+	- <http://boj.kr/b13c0e26367d4970b363f024f1bc04ac> **done**
+
 
