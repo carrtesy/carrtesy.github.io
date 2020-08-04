@@ -3,7 +3,7 @@ title: "Problem Solving Lists"
 
 date: 2020-07-25
 
-last_modified_at: 2020-07-29
+last_modified_at: 2020-08-04
 
 categories:
  - problem solvings 
@@ -116,9 +116,15 @@ My Problem Solving Lists
 - [Card Purchase 2](https://www.acmicpc.net/problem/16194)
 	- <http://boj.kr/9cdcf5cb9c8b4834929882eb13be454c> **done**
 
+- [Make N from 1, 2, 3 - v5](https://www.acmicpc.net/problem/15990)
+	- <http://boj.kr/b347a2c525f745dd8ce7a91e8ceaaee5> **done**
+
+
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
 
 - [Candy Game](https://www.acmicpc.net/problem/3085)
 	- <http://boj.kr/9b0e6c933c6a4b428c789984243e176c> **done**
+
+- [ESM](https://www.acmicpc.net/problem/1476)
 
