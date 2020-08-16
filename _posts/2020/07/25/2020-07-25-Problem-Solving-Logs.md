@@ -3,7 +3,7 @@ title: "Problem Solving Lists"
 
 date: 2020-07-25
 
-last_modified_at: 2020-08-04
+last_modified_at: 2020-08-13
 
 categories:
  - problem solvings 
@@ -100,6 +100,7 @@ My Problem Solving Lists
 
 *Dynamic Programming 1*
 - [Make it to 1](https://www.acmicpc.net/problem/1463)
+	- <http://boj.kr/d5eb9b3846d9414b8b81870adc430c22> **done**
 
 - [2XN tiling](https://www.acmicpc.net/problem/11726)
 	- <http://boj.kr/d4999cadd13e4ab9aba7c0faa6d5cc61> **done**
@@ -119,6 +120,10 @@ My Problem Solving Lists
 - [Make N from 1, 2, 3 - v5](https://www.acmicpc.net/problem/15990)
 	- <http://boj.kr/b347a2c525f745dd8ce7a91e8ceaaee5> **done**
 
+- [stairnum_easy](https://www.acmicpc.net/problem/10844)
+
+- [pinary number](https://www.acmicpc.net/problem/2193)
+	- <http://boj.kr/416e28c7a402434cb8901c5acd0eba17> **done**
 
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
