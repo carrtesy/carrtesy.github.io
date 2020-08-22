@@ -121,9 +121,21 @@ My Problem Solving Lists
 	- <http://boj.kr/b347a2c525f745dd8ce7a91e8ceaaee5> **done**
 
 - [stairnum_easy](https://www.acmicpc.net/problem/10844)
+	- <http://boj.kr/2f0bd9935a494fe09b2908e79f4ca53a> **done** **check**
 
 - [pinary number](https://www.acmicpc.net/problem/2193)
 	- <http://boj.kr/416e28c7a402434cb8901c5acd0eba17> **done**
+	
+- [LIS](https://www.acmicpc.net/problem/11053)
+
+- [LIS 4](https://www.acmicpc.net/problem/14002)
+
+- [seq sum](https://www.acmicpc.net/problem/1912)
+
+- [sum of squares](https://www.acmicpc.net/problem/1699)
+
+- [sum decomposition](https://www.acmicpc.net/problem/2225)
+	- <http://boj.kr/ad3810f5978245a980a859d3a2a94784> **done** **check**
 
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
