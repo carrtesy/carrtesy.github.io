@@ -1,5 +1,5 @@
 ---
-title: "Let's build a calculator(1) - Basic & Useless Calculator"
+title: "Let's build a calculator"
 date: 2020-03-08
 categories:
  - calculator 

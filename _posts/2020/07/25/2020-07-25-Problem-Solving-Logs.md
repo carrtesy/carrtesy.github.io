@@ -131,8 +131,10 @@ My Problem Solving Lists
 - [LIS 4](https://www.acmicpc.net/problem/14002)
 
 - [seq sum](https://www.acmicpc.net/problem/1912)
+	- <http://boj.kr/3b651a41793b4e1ca59bcf880b453cb6> **done** **check**
 
 - [sum of squares](https://www.acmicpc.net/problem/1699)
+	- <http://boj.kr/f540b17a9d6f4fc78bb40128ffde82dd> **done** **check**
 
 - [sum decomposition](https://www.acmicpc.net/problem/2225)
 	- <http://boj.kr/ad3810f5978245a980a859d3a2a94784> **done** **check**
@@ -144,4 +146,5 @@ My Problem Solving Lists
 	- <http://boj.kr/9b0e6c933c6a4b428c789984243e176c> **done**
 
 - [ESM](https://www.acmicpc.net/problem/1476)
+	- <http://boj.kr/d3f8d083a860416780701d80efb9638f> **done**
 
