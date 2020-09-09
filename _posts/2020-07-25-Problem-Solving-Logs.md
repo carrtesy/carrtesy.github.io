@@ -139,6 +139,9 @@ My Problem Solving Lists
 - [sum decomposition](https://www.acmicpc.net/problem/2225)
 	- <http://boj.kr/ad3810f5978245a980a859d3a2a94784> **done** **check**
 
+- [Make N from 1, 2, 3 - v3](http://boj.kr/2aacef451f2a414bafe55e83b8d8003d)
+	- <http://boj.kr/2aacef451f2a414bafe55e83b8d8003d> **done**
+	
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
 
