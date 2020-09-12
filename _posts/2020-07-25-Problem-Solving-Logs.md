@@ -142,6 +142,9 @@ My Problem Solving Lists
 - [Make N from 1, 2, 3 - v3](http://boj.kr/2aacef451f2a414bafe55e83b8d8003d)
 	- <http://boj.kr/2aacef451f2a414bafe55e83b8d8003d> **done**
 	
+- [RGB Distance](https://www.acmicpc.net/problem/1149)
+	- <http://boj.kr/587139981251434daf9a62fb13e52851> **done**
+	
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
 
@@ -153,3 +156,8 @@ My Problem Solving Lists
 
 - [remocon](https://www.acmicpc.net/problem/1107)
 	-<https://www.acmicpc.net/source/share/ad86ec0c2b4e4d4d9f5ef2ef22ebe616> **done**
+	
+- [tetromino](https://www.acmicpc.net/problem/14500)
+
+- [caing calendar](https://www.acmicpc.net/problem/6064)
+

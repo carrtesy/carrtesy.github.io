@@ -67,3 +67,7 @@ type "10", and type "yy"
 ![v5](/assets/images/post-2020-03-18-v5.png)
 ![v6](/assets/images/post-2020-03-18-v6.png)
 
+### find and replace all
+press ":" to switch to command mode
+
+"%s/pair/my_pair/g"
