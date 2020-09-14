@@ -26,7 +26,7 @@ $ sudo apt install tmux
 $ tmux
 ```
 
-![tmux-install](./tmux_install.png)
+![tmux-install](/assets/images/tmux_install.png)
 
 ### Trigger Key
 for tmux env, `<CTRL-B>` is trigger 
@@ -36,14 +36,14 @@ for tmux env, `<CTRL-B>` is trigger
 $ <CTRL-B> %
 ```
 
-![tmux-vsplit](./tmux_vsplit.png)
+![tmux-vsplit](/assets/images/tmux_vsplit.png)
 
 ### Horizontal Split
 ```
 $ <CTRL-B> "
 ```
 
-![tmux-hsplit](./tmux_hsplit.png)
+![tmux-hsplit](/assets/images/tmux_hsplit.png)
 
 ### Move across panes
 ```
