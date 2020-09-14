@@ -1,6 +1,6 @@
 ---
 title: "tmux cheatsheet"
-date: 2020-03-18
+date: 2020-09-14
 categories:
  - programming tools and environments 
 
