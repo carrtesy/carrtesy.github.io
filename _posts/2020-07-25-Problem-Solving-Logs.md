@@ -145,6 +145,12 @@ My Problem Solving Lists
 - [RGB Distance](https://www.acmicpc.net/problem/1149)
 	- <http://boj.kr/587139981251434daf9a62fb13e52851> **done**
 	
+- [Animal Park](https://www.acmicpc.net/problem/1309)
+
+- [Ascending Number](https://www.acmicpc.net/problem/11057)
+	- <http://boj.kr/a6604093d7474a9f9496745435c5ce29> **done**
+
+	
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
 
@@ -160,4 +166,8 @@ My Problem Solving Lists
 - [tetromino](https://www.acmicpc.net/problem/14500)
 
 - [caing calendar](https://www.acmicpc.net/problem/6064)
+
+- [sequential number writing 1](https://www.acmicpc.net/problem/1748)
+	- <http://boj.kr/5ce54d5c91304edda4c6e3f3bc1b2aa1> **done**
+
 

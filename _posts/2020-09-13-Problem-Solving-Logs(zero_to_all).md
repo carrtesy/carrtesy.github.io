@@ -9,6 +9,7 @@ categories:
  - problem solvings 
 
 ### for loop
+- 8393
 - 10950
 
 ### whlie loop
@@ -16,3 +17,4 @@ categories:
 
 ### array
 - 2562
+- 2577
