@@ -8,6 +8,7 @@ last_modified_at: 2020-09-21
 categories:
  - Embedded System
  - Raspberry Pi
+---
 
 Using host machine to compile codes that is active on target machine.
 
