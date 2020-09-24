@@ -149,6 +149,9 @@ My Problem Solving Lists
 
 - [Ascending Number](https://www.acmicpc.net/problem/11057)
 	- <http://boj.kr/a6604093d7474a9f9496745435c5ce29> **done**
+	
+- [sticker](https://www.acmicpc.net/problem/9465)
+	- <http://boj.kr/4926373436bd4e45968a81fa3990bc11> **done**
 
 	
 *Brute Force*

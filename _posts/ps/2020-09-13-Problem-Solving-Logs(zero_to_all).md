@@ -9,8 +9,10 @@ categories:
  - problem solvings 
 
 ### for loop
+- 2741
 - 8393
 - 10950
+- 15552
 
 ### whlie loop
 - 1110
@@ -18,3 +20,7 @@ categories:
 ### array
 - 2562
 - 2577
+- 3052
+
+### function
+- 1065
