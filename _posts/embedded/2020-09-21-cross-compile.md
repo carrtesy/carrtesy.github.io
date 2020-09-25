@@ -3,7 +3,7 @@ title: "Embedded Systems: Cross Compilation"
 
 date: 2020-09-21
 
-last_modified_at: 2020-09-21
+last_modified_at: 2020-09-25
 
 categories:
  - Embedded System
@@ -115,16 +115,77 @@ arm-unknown-linux-gnueabi-gcc hello.c -o hello
 
 However, this cannot be executed, as we are on host machine, not on target machine.
 
-### Connect to target machine(Raspberry Pi)
+### Enable SSH
+
+In host machine, we do the followings.
+
+Raspbian boot SD card is consist of two parts:
+- FAT32 with bootloader, kernel.bin, Config.txt @ /dev/sdb1 for me
+- ext4 with Raspbian File System @ /dev/sdb2 for me
+
+
+*For native ubuntu, plug in usb-sdcard adapter.*
+and setup the first partition by:
+
+```
+mkdir sdcard1
+sudo mount /dev/sdb1 sdcard1
+echo "" > sdcard1/ssh
+sudo umount sdcard1
+``` 
+
+second partition by, 
+```
+mkdir sdcard2
+sudo mount /dev/sdb2 sdcard2
+```
+
+and can edit by:
+```
+vim sdcard2/etc/dhcpcd.conf
+```
+
+and uncomment or add by:
+```
+interface eth0
+static ip_address=192.168.1.10/24
+```
+ and umount by
+```
+sudo umount sdcard2 
+```
+ 
+ 
+ 
+
+### Host setup
 
 I used ethernet cable / adapter to connect host and target machine.
-Hope this helps!
 
 
 ![host_nw_setup](/assets/images/embedded/host_nw_setup.png  "host_nw_setup")
 
-Network
-for host machine: 192.168.1.1
-for target machine: 192.168.1.10
 
+Network for host machine: 192.168.1.1
 
+Network for target machine: 192.168.1.10/24 as set in dhcpcd.conf
+
+### connect by ssh
+```
+ssh pi@192.168.1.10
+```
+
+and default password is raspberry.
+
+### Send files
+```
+scp hello pi@192.168.1.10:~/
+```
+
+### Execute in target machine
+Through ssh mode,
+```
+./hello
+```
+
+![hello](/assets/images/embedded/hello_cross_compile.png  "hello")
