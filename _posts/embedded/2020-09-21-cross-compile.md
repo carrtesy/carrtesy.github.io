@@ -188,4 +188,4 @@ Through ssh mode,
 ./hello
 ```
 
-![hello](/assets/images/embedded/hello_cross_compile.png  "hello")
+![hello](/assets/images/embedded/hello_cross_compile.png)
