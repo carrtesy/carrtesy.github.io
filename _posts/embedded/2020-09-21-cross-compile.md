@@ -3,7 +3,7 @@ title: "Embedded Systems: Cross Compilation"
 
 date: 2020-09-21
 
-last_modified_at: 2020-09-25
+last_modified_at: 2020-10-06
 
 categories:
  - Embedded System
@@ -93,6 +93,10 @@ so setup the path by:
 ```
 export PATH=$PATH:~/x-tools/arm-unknown-gnueabi/bin
 ```
+
+This exported path is **initialized after logout**.
+So if you want to permantly set path, you can add export command above to the **'~/.bashrc** file. Just add the line above and save it.
+
 
 and can create hello.c as:
 ```c
@@ -188,4 +192,4 @@ Through ssh mode,
 ./hello
 ```
 
-![hello](/assets/images/embedded/hello_cross_compile.png  "hello")
+![hello](/assets/images/embedded/hello_cross_compile.png)
