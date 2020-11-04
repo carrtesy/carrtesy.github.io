@@ -146,13 +146,24 @@ My Problem Solving Lists
 	- <http://boj.kr/587139981251434daf9a62fb13e52851> **done**
 	
 - [Animal Park](https://www.acmicpc.net/problem/1309)
+	- <http://boj.kr/e6b291b8295e41cb8e4e48c348ce0329> **done**
 
 - [Ascending Number](https://www.acmicpc.net/problem/11057)
 	- <http://boj.kr/a6604093d7474a9f9496745435c5ce29> **done**
 	
 - [sticker](https://www.acmicpc.net/problem/9465)
 	- <http://boj.kr/4926373436bd4e45968a81fa3990bc11> **done**
+	
+- [wine tasting](https://www.acmicpc.net/problem/2156)
 
+- [integer triangle](https://www.acmicpc.net/problem/1932)
+	- <http://boj.kr/7df9d7aa9fd24a86a7ade01e3dceceb5> **done**
+
+- [Maximum Increasing Subsequence](https://www.acmicpc.net/problem/11055)
+	- <http://boj.kr/2f7da1a3c02a4fdbaf3b333d124bd189> **done** **check**
+
+-  [Longest Decreasing Subsequence](https://www.acmicpc.net/problem/11722)
+	- <http://boj.kr/7efaac8444a7450790fa91259c9c2688> **done**
 	
 *Brute Force*
 - [Seven Dwarfs](https://www.acmicpc.net/problem/2309)
