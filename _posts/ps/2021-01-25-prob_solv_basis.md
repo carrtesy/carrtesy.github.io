@@ -9,8 +9,7 @@ tags:
  - BFS
 ---
 
-# Intro
-Basic of Problem Solving is to find all possible cases.
+Starting point of Problem Solving is to find all possible cases.
 *DFS(Depth First Search)* and *BFS(Breadth First Search)* are good ways to do so.
 
 # Idea
