@@ -8,11 +8,14 @@ tags:
  - Segment Tree
 ---
 
-How can we process aggregated query, in more efficient way?
+How can we process aggregate queries, in more efficient way?
 
 # Idea
 Suppose we have N data sequentially, and users frequently request the sum of data from *i*th data to *j*th data.
-It is really nagging to sum all those up every time. Here's the idea: how about **caching** the sub-answers?
+
+It is really nagging to sum all those up every time. 
+
+Here's the idea: how about **caching** the sub-answers?
 
 Segment Tree is one way to process such aggregated query in more efficient manner.
 Segment Tree not only stores the data itself, but also some partial answers that are frequently referred.
@@ -31,6 +34,7 @@ Then, we may set up a tree of:
 data 1 2 3 4 5 0 0 0
 ```
 
+
 # HowTo
 ## Initialization
 Suppose *N* data is available.
@@ -39,8 +43,11 @@ Segment Tree takes the form of binary tree.
 Then those N data will be located at the leaf position.
 
 So what we do first is to figure out how many leaf nodes will be.
+
 Here, we need to find *S* such that:
+
 $$ S = 2^k >= N $$
+
 For example above when N = 5, 
 we may need *k* to be 3, and *S* to be 8.
 
@@ -57,7 +64,7 @@ Suppose that we are trying to update 3rd element(which is 3 below), to 100.
 1 2 3 4 5 0 0 0
 ```
 
-Firstly, we update the data:
+First of all, we update data at the leaf:
 ```
         15
    10        5
@@ -65,7 +72,7 @@ Firstly, we update the data:
 1 2 *100* 4 5 0 0 0
 ```
 
-And also, parents too.
+And also, parents in the same way.
 ```
         15                       15                   *112*
    10        5             *107*     5            107        5
@@ -90,7 +97,9 @@ Let's tag the tree first, by their role.
   1    2    3    4    5    0    0    0
 
 ```
+
 Suppose we want sum from 2nd element to 5th element.
+
 Then we may send the query of (2,5) as follows.
 
 
@@ -145,14 +154,14 @@ Likewise, we may end up doing:
 ```
 
 # Complexity Analysis
-- Time: O(logn) for queries, O(logn) for updates
-- Space: O(2*S) or O(N)
+- Time: O(logn) for queries, O(logn) for updates, as those are related to tree height.
+- Space: O(2*S) or O(N) as we setup binary tree.
 
 # Template Code
-cpp: https://github.com/dongminkim0220/Problem-Solvings/blob/master/templates/cpp/segment_tree.cpp
+cpp: <https://github.com/dongminkim0220/Problem-Solvings/blob/master/templates/cpp/segment_tree.cpp>
 
 # Problems to Solve
-- basics: https://www.acmicpc.net/problem/2042
+- basics: <https://www.acmicpc.net/problem/2042>
 
 
 
