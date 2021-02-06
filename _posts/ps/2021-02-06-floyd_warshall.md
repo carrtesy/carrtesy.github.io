@@ -1,5 +1,5 @@
 ---
-title: "Problem Solving Basis - Topological Sort"
+title: "Problem Solving Basis - Floyd Warshall"
 date: 2021-02-01
 categories:
  - problem solving 
