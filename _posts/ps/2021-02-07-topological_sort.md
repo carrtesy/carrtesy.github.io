@@ -12,8 +12,7 @@ How can we program the computer to wear socks first, and then shoes?
 
 # Idea
 
-
-![Professor Bumstead topologically sort his clothing when getting dressed.](http://personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/Gifs/topoSortProfBumstead.gif)
+<img src="http://personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/Gifs/topoSortProfBumstead.gif" alt="Professor Bumstead topologically sort his clothing when getting dressed.">
 
 *Image from: http://personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/topoSort.htm*
 
@@ -76,7 +75,7 @@ Third, when task is done, delete the task, with its edges to other tasks. Repeat
 
 # Complexity Analysis
 Graph takes E edges, V vertices.
-- Time: |V| nodes are into queue, and |E| edges are checked and deleted, so O(|V|+|E|)
+- Time: V nodes are into queue, and E edges are checked and deleted, so O(V+E)
 - Space: O(E) for adjacency list
 
 # Template Code
