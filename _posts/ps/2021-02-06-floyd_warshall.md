@@ -43,8 +43,8 @@ What would be our next step? V<sub>1</sub>, V<sub>2</sub>, ..., V<sub>k</sub> wi
 
 # Complexity Analysis
 Graph takes V vertices.
-- Time:  There are $|V|^2$ pairs, and detouring node |V| times considered, so $|V|^3$ 
-- Space: $|V|^2$ for adjacency matrix
+- Time:  There are |V|<sup>2</sup> pairs, and detouring node |V| times considered, so |V|<sup>3</sup> 
+- Space: |V|<sup>2</sup> for adjacency matrix
 
 # Template Code
 cpp: <https://github.com/dongminkim0220/Problem-Solvings/blob/master/templates/cpp/floyd_warshall.cpp>
