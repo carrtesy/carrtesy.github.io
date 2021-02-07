@@ -12,7 +12,7 @@ How can we program the computer to wear socks first, and then shoes?
 
 # Idea
 
-<img src="http://personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/Gifs/topoSortProfBumstead.gif" alt="Professor Bumstead topologically sort his clothing when getting dressed.">
+![topological_sort](..\..\assets\images\ps\2021-02-07-topological_sort.gif)
 
 *Image from: http://personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/GraphAlgor/topoSort.htm*
 
