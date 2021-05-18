@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Done-doe-doe"
+title                    : "Tommy's Lab"
 title_separator          : "-"
 subtitle                 : ""
-name                     : "Done-doe-doe"
+name                     : "Tommy's Lab"
 description              : "Website for Dongmin Kim"
 url                      : "https://dongminkim0220.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -109,9 +109,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Done-doe-doe"
+  name             : "Tommy Kim"
   avatar           : "/assets/images/insta_profile.jpg"
-  bio              : "What have you been up to?"
+  bio              : "On things that I've learned, used, and enjoyed."
   location         : "Seoul, Korea"
   email            :
   links:
