@@ -13,13 +13,13 @@ use_math: true
 
 Let's try some mathematical notations with MathJax.
 
-# Functions
+## Functions
 ```
 $ f(x) = x^2 $
 ```
 $ f(x) = x^2 $
 
 ```
-$ \lim_{n\to \infty}(1+\frac{1}{n})^n $
+$ \lim_{n\to \infty}(1+\frac{1}{n})^n = e $
 ```
-$ \lim_{n\to \infty}(1+\frac{1}{n})^n $
+$ \lim_{n\to \infty}(1+\frac{1}{n})^n = e $
