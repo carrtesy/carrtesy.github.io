@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 date: 2021-05-19
-last_modified_at: 2020-05-25
+last_modified_at: 2020-05-30
 permalink: /about/
 layout: single
 author_profile: true
@@ -11,16 +11,31 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 
 
-# Academics & Professional Experiences
+## Recently Working
+
+I'm Interested in Algorithmic Trading Strategies, and now trying Reinforcement Learning for that project. You may visited my [github repo](https://github.com/dongminkim0220/bitmagic) for current status.
+
+![crypto](/assets/images/about/crypto.png)
+
+
+
+## Academics
 
 - [Mar 2014 - Feb 2021] Bachelor's Degree in *Global Economics* and *Computer Science* at *Sungkyunkwan University*, South Korea
+
 - [Aug 2019 - Nov 2019] Exchange Student at *The Chinese University of Hong Kong*
-- [Jan 2020 - Feb 2020] Intern, Samil Pwc:  Developed RPA Service using *UiPath* and *Python*
+
 - [Mar 2011 - Feb 2014] *Chinese Department* at *Myungduk Foreign Language High School*, South Korea
 
 
 
-# Programming Practice
+## Professional Experiences
+
+- [Jan 2020 - Feb 2020] Intern, Samil Pwc:  Developed RPA Service using *UiPath* and *Python*
+
+
+
+## Programming Practice
 
 I believe programming practice is essential to SW development, so I sometimes use those platforms below for implementation skills.
 
@@ -50,7 +65,7 @@ For my Undergraduate Dissertation, I was fortunate to get advice from Prof. Rhee
 
 **First moment with neural network project!**
 
-For my Undergraduate Research Project, I've participated in [Prof. Simon Woo's DASH LAB](https://dash-lab.github.io/About/) Project, and did some researches on Tensor Decomposition for Deepfake Detection Project. You may visited my [github repo](https://github.com/dongminkim0220/Deepfake_with_tensor_decomposition) for my project, and see some ideas, and my own research procedure there.
+For my Undergraduate Research Project, I've participated in [Prof. Simon Woo's DASH LAB](https://dash-lab.github.io/About/) Project, and did some researches on Tensor Decomposition for Deepfake Detection Project. You may visit my [github repo](https://github.com/dongminkim0220/Deepfake_with_tensor_decomposition) for my project, and see some ideas, and my own research procedure there.
 
 ![tedcmp](/assets/images/about/tedcmp.jpg)
 
@@ -73,3 +88,4 @@ In SKKU embedded systems projects course, pet-caring robot was my team's topic. 
 For the purpose of building communication channels for SKKU GLIFers, I tried building website for them. It was half-success and half-failure. I used **Python Django** Framework for SW, *[Iwantmyname](https://iwantmyname.com/)* for domain service, and *[PythonAnywhere](https://www.pythonanywhere.com/)* for hosting. It is now out of service, but it was my unique experience of doing web programming for real-world problems. You may visit my repo [here](https://github.com/dongminkim0220/GLIF_Website_Project).
 
 ![glif](/assets/images/about/glif.png)
+
