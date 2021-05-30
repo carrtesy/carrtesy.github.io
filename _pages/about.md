@@ -13,7 +13,7 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 ## Recently Working
 
-I'm Interested in Algorithmic Trading Strategies, and now trying Reinforcement Learning for that project. You may visited my [github repo](https://github.com/dongminkim0220/bitmagic) for current status.
+I'm Interested in Algorithmic Trading Strategies, and now trying Reinforcement Learning for that project. You may visit my [github repo](https://github.com/dongminkim0220/bitmagic) for current status.
 
 ![crypto](/assets/images/about/crypto.png)
 
