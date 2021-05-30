@@ -45,13 +45,13 @@ I believe programming practice is essential to SW development, so I sometimes us
 
 
 
-# Projects
+## Projects
 
 Here are some lists of projects that I've worked.
 
 
 
-## Crude Oil Price Prediction based on GKFN (Mar 2020 ~ Nov 2020)
+### Crude Oil Price Prediction based on GKFN (Mar 2020 ~ Nov 2020)
 
 **My very first thesis here on Modeling!**
 
@@ -61,7 +61,7 @@ For my Undergraduate Dissertation, I was fortunate to get advice from Prof. Rhee
 
 
 
-## Tensor Decomposition for Deepfake Detection (July 2020 ~ Aug 2020)
+### Tensor Decomposition for Deepfake Detection (July 2020 ~ Aug 2020)
 
 **First moment with neural network project!**
 
@@ -71,7 +71,7 @@ For my Undergraduate Research Project, I've participated in [Prof. Simon Woo's D
 
 
 
-## Pet-caring Robots
+### Pet-caring Robots
 
 **I still remember the moment when my SW controlled my device!**
 
@@ -81,7 +81,7 @@ In SKKU embedded systems projects course, pet-caring robot was my team's topic. 
 
 
 
-## GLIF Website Project
+### GLIF Website Project
 
 **End to End Programming Project: From coding to deploying!**
 
