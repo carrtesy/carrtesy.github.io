@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 date: 2021-05-19
-last_modified_at: 2020-05-30
+last_modified_at: 2020-06-22
 permalink: /about/
 layout: single
 author_profile: true
@@ -34,8 +34,8 @@ I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematic
 
 ## Professional Experiences
 
-- [Jun 2021 - Aug 2021] Intern, KT Corp., South Korea | SW Developer  
-- [Jan 2020 - Feb 2020] Intern, Samil PwC, South Korea | Developed RPA Service using *UiPath* and *Python*
+- [Jun 2021 - Aug 2021] Intern, KT Corp., \| South Korea SW Developer  
+- [Jan 2020 - Feb 2020] Intern, Samil PwC, South Korea \| Developed RPA Service using *UiPath* and *Python*
 
 
 
@@ -57,5 +57,4 @@ I believe programming practice is essential to SW development, so I sometimes us
 1. [Codeforces](https://codeforces.com/) for my competitive programming experience, and recently joined **codeforces round #722 (May 25th, 2021)**, and have participated **1** competition(s) in total. My handle is [carrtesy](https://codeforces.com/profile/carrtesy).
 2. [Baekjoon](https://www.acmicpc.net/) is a Korean online judge platform for Programming Practice, and I've solved **200** problems and ranked **8072** until **May 19th, 2021**. Here is [my info](https://www.acmicpc.net/user/ehdals56).
 3. [Programmers](https://programmers.co.kr/) is another Korean Programming Practice platform, and I've solved **131** programming & SQL problems and ranked **2353** until **May 19th, 2021**.
-
 
