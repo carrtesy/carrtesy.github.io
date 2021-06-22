@@ -1,6 +1,6 @@
 ---
 title: "Notes"
-layout: notes
+layout: categories
 permalink: /notes/
 author_profile: true
 ---
