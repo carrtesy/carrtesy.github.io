@@ -34,7 +34,7 @@ I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematic
 
 ## Professional Experiences
 
-- [Jun 2021 - Aug 2021] Intern, KT Corp., \| South Korea SW Developer  
+- [Jun 2021 - Aug 2021] Intern, KT Corp., South Korea \| South Korea SW Developer  
 - [Jan 2020 - Feb 2020] Intern, Samil PwC, South Korea \| Developed RPA Service using *UiPath* and *Python*
 
 
