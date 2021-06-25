@@ -7,9 +7,7 @@ layout: single
 author_profile: true
 ---
 
-Nice to meet you!
-
-I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1Qg-GGGiDWKKaUqvxoGnjdjX_U3-1y6kS/view?usp=sharing) here.
+Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1Qg-GGGiDWKKaUqvxoGnjdjX_U3-1y6kS/view?usp=sharing) here.
 
 
 
@@ -25,7 +23,7 @@ I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematic
 
 ## Academics
 
-- [Aug 2021 - Present] Master's Degree in Artificial Intelligence, KAIST (Korea Advanced Institute of Science and Technology), South Korea
+- [Aug 2021 - Present] Got Admission from *KAIST GSAI* Master Course, South Korea
 - [Mar 2014 - Feb 2021] Bachelor's Degree in *Global Economics* and *Computer Science* at *Sungkyunkwan University*, South Korea
 - [Aug 2019 - Nov 2019] Exchange Student at *The Chinese University of Hong Kong*
 - [Mar 2011 - Feb 2014] *Chinese Department* at *Myungduk Foreign Language High School*, South Korea
@@ -34,7 +32,7 @@ I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematic
 
 ## Professional Experiences
 
-- [Jun 2021 - Aug 2021] Intern, KT Corp., South Korea \| South Korea SW Developer  
+- [Jun 2021 - Aug 2021] Intern, KT Corp., South Korea \| SW Developer  
 - [Jan 2020 - Feb 2020] Intern, Samil PwC, South Korea \| Developed RPA Service using *UiPath* and *Python*
 
 
