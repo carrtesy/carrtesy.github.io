@@ -1,5 +1,4 @@
 ---
-​---
 title: "Computer Vision: Try MNIST with Keras"
 date: 2021-07-18
 last_modified_at: 2021-07-18
@@ -10,7 +9,6 @@ tags:
  - mnist
  - classification
  - keras
-​---
 ---
 
 ```python
@@ -22,6 +20,8 @@ import matplotlib.pyplot as plt
 ```
 
 
+
+
 ```python
 device_name = tf.test.gpu_device_name()
 if device_name != '/device:GPU:0':
@@ -29,10 +29,14 @@ if device_name != '/device:GPU:0':
 print('Found GPU at: {}'.format(device_name))
 ```
 
+
+
 ```console
 Found GPU at: /device:GPU:0
 
 ```
+
+
 
 
 ```python
@@ -40,9 +44,13 @@ Found GPU at: /device:GPU:0
 ```
 
 
+
+
 ```python
 x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size = 0.1, random_state = 42)
 ```
+
+
 
 
 ```python
