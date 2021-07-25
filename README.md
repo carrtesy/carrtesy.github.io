@@ -4,6 +4,14 @@ Available @ [dongminkim0220.github.io](https://dongminkim0220.github.io/)
 
 
 
+## From Jupyter Notebook to Markdown
+
+```bash
+jupyter nbconvert MNIST_Trials.ipynb --to markdown --template jekyll.tpl
+```
+
+
+
 ## Plan to be updated to the post
 
 ### Problem Solvings

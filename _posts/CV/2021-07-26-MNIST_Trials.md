@@ -11,6 +11,10 @@ tags:
  - keras
 ---
 
+MNIST is the starting point of Computer Vision Research. Let's try them with Keras. 
+
+
+
 ```python
 import tensorflow as tf
 from tensorflow import keras
@@ -20,8 +24,6 @@ import matplotlib.pyplot as plt
 ```
 
 
-
-
 ```python
 device_name = tf.test.gpu_device_name()
 if device_name != '/device:GPU:0':
@@ -29,14 +31,10 @@ if device_name != '/device:GPU:0':
 print('Found GPU at: {}'.format(device_name))
 ```
 
-
-
-```console
+```text
 Found GPU at: /device:GPU:0
 
 ```
-
-
 
 
 ```python
@@ -44,13 +42,9 @@ Found GPU at: /device:GPU:0
 ```
 
 
-
-
 ```python
 x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size = 0.1, random_state = 42)
 ```
-
-
 
 
 ```python
@@ -60,7 +54,7 @@ x_train.shape
 
 
 
-```console
+```text
 (54000, 28, 28)
 ```
 
@@ -74,7 +68,7 @@ y_train.shape
 
 
 
-```console
+```text
 (54000,)
 ```
 
@@ -88,7 +82,7 @@ x_val.shape
 
 
 
-```console
+```text
 (6000, 28, 28)
 ```
 
@@ -102,7 +96,7 @@ y_val.shape
 
 
 
-```console
+```text
 (6000,)
 ```
 
@@ -116,7 +110,7 @@ x_test.shape
 
 
 
-```console
+```text
 (10000, 28, 28)
 ```
 
@@ -130,7 +124,7 @@ y_test.shape
 
 
 
-```console
+```text
 (10000,)
 ```
 
@@ -144,7 +138,7 @@ x_train[0]
 
 
 
-```console
+```text
 array([[  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
           0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
           0,   0],
@@ -241,7 +235,7 @@ y_train[0]
 
 
 
-```console
+```text
 1
 ```
 
@@ -265,7 +259,7 @@ y_train[0]
 
 
 
-```console
+```text
 array([0., 1., 0., 0., 0., 0., 0., 0., 0., 0.], dtype=float32)
 ```
 
@@ -321,7 +315,7 @@ linear_model = keras.models.Sequential([
 linear_model.summary()
 ```
 
-```console
+```text
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -348,7 +342,7 @@ with tf.device(device_name = device_name):
     hist = linear_model.fit(x_train, y_train, batch_size = BATCH_SIZE, epochs = EPOCHS, shuffle = True, verbose = 2, validation_data=(x_val, y_val))
 ```
 
-```console
+```text
 Epoch 1/100
 844/844 - 2s - loss: 1.9300 - accuracy: 0.4194 - val_loss: 1.6387 - val_accuracy: 0.6260
 Epoch 2/100
@@ -572,7 +566,7 @@ plt.show()
 ```
 
 
-![png](MNIST_Trials_files/MNIST_Trials_27_0.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_27_0.png)
 
 
 
@@ -581,7 +575,7 @@ with tf.device(device_name = device_name):
     linear_model.evaluate(x_test, y_test, batch_size = BATCH_SIZE, verbose = 2)
 ```
 
-```console
+```text
 157/157 - 0s - loss: 0.3404 - accuracy: 0.9067
 
 ```
@@ -600,7 +594,7 @@ linear_model_output
 
 
 
-```console
+```text
 <tf.Tensor: shape=(1, 10), dtype=float32, numpy=
 array([[2.1254762e-04, 1.3267899e-06, 2.1704029e-04, 2.0511877e-03,
         6.5497406e-05, 9.2676739e-05, 4.4080762e-06, 9.9426877e-01,
@@ -618,7 +612,7 @@ softmax_output
 
 
 
-```console
+```text
 <tf.Tensor: shape=(1, 10), dtype=float32, numpy=
 array([[0.08542631, 0.08540826, 0.08542669, 0.08558352, 0.08541374,
         0.08541606, 0.08540852, 0.23083663, 0.08542276, 0.08565752]],
@@ -635,7 +629,7 @@ tf.math.argmax(softmax_output, axis = 1)
 
 
 
-```console
+```text
 <tf.Tensor: shape=(1,), dtype=int64, numpy=array([7])>
 ```
 
@@ -649,7 +643,7 @@ plt.imshow(x_test[0])
 
 
 
-```console
+```text
 <matplotlib.image.AxesImage at 0x7f74065a3b90>
 ```
 
@@ -676,7 +670,7 @@ MLL_model = keras.models.Sequential([
 MLL_model.summary()
 ```
 
-```console
+```text
 Model: "sequential_2"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -707,7 +701,7 @@ with tf.device(device_name = device_name):
     hist = MLL_model.fit(x_train, y_train, batch_size = BATCH_SIZE, epochs = EPOCHS, shuffle = True, verbose = 2, validation_data=(x_val, y_val))
 ```
 
-```console
+```text
 Epoch 1/100
 844/844 - 2s - loss: 1.4309 - accuracy: 0.6255 - val_loss: 0.9681 - val_accuracy: 0.7858
 Epoch 2/100
@@ -917,7 +911,7 @@ with tf.device(device_name = device_name):
     MLL_model.evaluate(x_test, y_test, batch_size = BATCH_SIZE, verbose = 2)
 ```
 
-```console
+```text
 157/157 - 0s - loss: 0.2768 - accuracy: 0.9208
 
 ```
@@ -936,14 +930,14 @@ show_model_output(x_test[0], MLL_model)
 
 
 
-```console
+```text
 <tf.Tensor: shape=(), dtype=int64, numpy=7>
 ```
 
 
 
 
-![png](MNIST_Trials_files/MNIST_Trials_40_1.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_40_1.png)
 
 
 ### Multi Layer Perceptron (MLP)
@@ -964,7 +958,7 @@ MLP_model = keras.models.Sequential([
 MLP_model.summary()
 ```
 
-```console
+```text
 Model: "sequential_2"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -995,7 +989,7 @@ with tf.device(device_name = device_name):
     hist = MLP_model.fit(x_train, y_train, batch_size = BATCH_SIZE, epochs = EPOCHS, shuffle = True, verbose = 2, validation_data=(x_val, y_val))
 ```
 
-```console
+```text
 Epoch 1/100
 844/844 - 2s - loss: 2.0317 - accuracy: 0.4185 - val_loss: 1.7569 - val_accuracy: 0.6358
 Epoch 2/100
@@ -1205,7 +1199,7 @@ with tf.device(device_name = device_name):
     MLP_model.evaluate(x_test, y_test, batch_size = BATCH_SIZE, verbose = 2)
 ```
 
-```console
+```text
 157/157 - 0s - loss: 0.1643 - accuracy: 0.9534
 
 ```
@@ -1218,14 +1212,14 @@ show_model_output(x_test[0], MLP_model)
 
 
 
-```console
+```text
 <tf.Tensor: shape=(), dtype=int64, numpy=7>
 ```
 
 
 
 
-![png](MNIST_Trials_files/MNIST_Trials_47_1.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_47_1.png)
 
 
 ### CNN
@@ -1243,7 +1237,7 @@ x_train.shape, x_val.shape, x_test.shape
 
 
 
-```console
+```text
 ((54000, 28, 28, 1), (6000, 28, 28, 1), (10000, 28, 28, 1))
 ```
 
@@ -1272,7 +1266,7 @@ with tf.device(device_name = device_name):
 #show_model_output(x_test[0], CNN_model)
 ```
 
-```console
+```text
 Model: "sequential_7"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -1500,15 +1494,15 @@ evaluation start!
 ```
 
 
-```console
+```text
 ---------------------------------------------------------------------------
 ```
 
-```console
+```text
 TypeError                                 Traceback (most recent call last)
 ```
 
-```console
+```text
 <ipython-input-55-bafad150fd19> in <module>()
      17     CNN_model.evaluate(x_test, y_test, batch_size = BATCH_SIZE, verbose = 2)
      18 
@@ -1516,7 +1510,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 <ipython-input-41-13d295f90d77> in show_model_output(data, model)
       1 def show_model_output(data, model):
 ----> 2     plt.imshow(data)
@@ -1526,7 +1520,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 /usr/local/lib/python3.7/dist-packages/matplotlib/pyplot.py in imshow(X, cmap, norm, aspect, interpolation, alpha, vmin, vmax, origin, extent, shape, filternorm, filterrad, imlim, resample, url, data, **kwargs)
    2649         filternorm=filternorm, filterrad=filterrad, imlim=imlim,
    2650         resample=resample, url=url, **({"data": data} if data is not
@@ -1536,7 +1530,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 /usr/local/lib/python3.7/dist-packages/matplotlib/__init__.py in inner(ax, data, *args, **kwargs)
    1563     def inner(ax, *args, data=None, **kwargs):
    1564         if data is None:
@@ -1546,7 +1540,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 /usr/local/lib/python3.7/dist-packages/matplotlib/cbook/deprecation.py in wrapper(*args, **kwargs)
     356                 f"%(removal)s.  If any parameter follows {name!r}, they "
     357                 f"should be pass as keyword, not positionally.")
@@ -1556,7 +1550,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 /usr/local/lib/python3.7/dist-packages/matplotlib/cbook/deprecation.py in wrapper(*args, **kwargs)
     356                 f"%(removal)s.  If any parameter follows {name!r}, they "
     357                 f"should be pass as keyword, not positionally.")
@@ -1566,7 +1560,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 /usr/local/lib/python3.7/dist-packages/matplotlib/axes/_axes.py in imshow(self, X, cmap, norm, aspect, interpolation, alpha, vmin, vmax, origin, extent, shape, filternorm, filterrad, imlim, resample, url, **kwargs)
    5624                               resample=resample, **kwargs)
    5625 
@@ -1576,7 +1570,7 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 /usr/local/lib/python3.7/dist-packages/matplotlib/image.py in set_data(self, A)
     697                 or self._A.ndim == 3 and self._A.shape[-1] in [3, 4]):
     698             raise TypeError("Invalid shape {} for image data"
@@ -1586,13 +1580,13 @@ TypeError                                 Traceback (most recent call last)
 
 ```
 
-```console
+```text
 TypeError: Invalid shape (28, 28, 1) for image data
 ```
 
 
 
-![png](MNIST_Trials_files/MNIST_Trials_51_2.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_51_2.png)
 
 
 ### Deeper CNN
@@ -1627,7 +1621,7 @@ with tf.device(device_name = device_name):
 #show_model_output(x_test[0], Deeper_CNN_model)
 ```
 
-```console
+```text
 Model: "sequential_8"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -1903,7 +1897,7 @@ with tf.device(device_name = device_name):
 #show_model_output(x_test[0], Deeper_CNN_model)
 ```
 
-```console
+```text
 training start!
 Epoch 1/100
 844/844 - 3s - loss: 0.2361 - accuracy: 0.9287 - val_loss: 0.0772 - val_accuracy: 0.9747
@@ -2156,7 +2150,7 @@ with tf.device(device_name = device_name):
 #show_model_output(x_test[0], Deeper_CNN_model)
 ```
 
-```console
+```text
 Model: "sequential_1"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
