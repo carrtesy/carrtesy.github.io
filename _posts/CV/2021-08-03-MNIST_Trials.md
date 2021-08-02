@@ -148,7 +148,7 @@ plt.show()
 ```
 
 
-![png](MNIST_Trials_files/MNIST_Trials_17_0.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_17_0.png)
 
 
 ## Models
@@ -480,7 +480,7 @@ plt.show()
 ```
 
 
-![png](MNIST_Trials_files/MNIST_Trials_37_0.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_37_0.png)
 
 
 
@@ -491,7 +491,7 @@ plt.show()
 ```
 
 
-![png](MNIST_Trials_files/MNIST_Trials_38_0.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_38_0.png)
 
 
 ## Model Evaluation
@@ -581,7 +581,7 @@ plt.imshow(x_test[0])
 
 
 
-![png](MNIST_Trials_files/MNIST_Trials_45_1.png)
+![png](../../assets/images/cv/MNIST_Trials_files/MNIST_Trials_45_1.png)
 
 
 It seems to work quite well! 
