@@ -13,14 +13,15 @@ tags:
  - Need
  - Be
  - Modified
+ 
+use_math: true
 ---
 {%- endblock header -%}
 
 {% block stream %}	
-~~~text
+```text
 {{ output.text }}
-~~~
-{: style="background-color:gray"}
+```
 {% endblock %}
 
 {% block data_text %}
