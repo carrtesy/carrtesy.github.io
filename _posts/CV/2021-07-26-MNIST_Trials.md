@@ -31,10 +31,11 @@ if device_name != '/device:GPU:0':
 print('Found GPU at: {}'.format(device_name))
 ```
 
-```text
+---
+
 Found GPU at: /device:GPU:0
 
-```
+---
 
 
 ```python

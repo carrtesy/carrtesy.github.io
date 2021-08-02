@@ -16,10 +16,11 @@ tags:
 ---
 {%- endblock header -%}
 
-{% block stream %}
-```text
+{% block stream %}	
+~~~text
 {{ output.text }}
-```
+~~~
+{: style="background-color:gray"}
 {% endblock %}
 
 {% block data_text %}
