@@ -13,9 +13,7 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 ## Recently Working
 
-1. I'm currently doing my SW Developer Internship at *KT Corp. (Korea Telecom)*.
-
-2. I'm Interested in Algorithmic Trading Strategies, and now trying Reinforcement Learning for that project. You may visit my [github repo](https://github.com/dongminkim0220/bitmagic) for current status.
+1. I'm Interested in Algorithmic Trading Strategies, and now trying Reinforcement Learning for that project. You may visit my [github repo](https://github.com/dongminkim0220/bitmagic) for current status.
 
 ![crypto](/assets/images/about/crypto.png)
 
@@ -23,8 +21,7 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 ## Academics
 
-- [Aug 2021 - Present] Got Admission from *KAIST GSAI* Master Course, South Korea
-- [Jan 2021 - Mar 2021] Internship at KAIST (Advisor: Prof. [Jaegul Choo](https://sites.google.com/site/jaegulchoo/))
+- [Aug 2021 - Present] Master Student at *KAIST GSAI* ,South Korea  (Advisor: Prof. [Jaegul Choo](https://sites.google.com/site/jaegulchoo/) )
 - [Mar 2014 - Feb 2021] Bachelor's Degree in *Global Economics* and *Computer Science* at *Sungkyunkwan University*, South Korea
 - [Aug 2019 - Nov 2019] Exchange Student at *The Chinese University of Hong Kong*
 - [Mar 2011 - Feb 2014] *Chinese Department* at *Myungduk Foreign Language High School*, South Korea
@@ -42,6 +39,7 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 Here are some lists of projects that I've worked. Visit [here](https://dongminkim0220.github.io/projects/) for details.
 
+- KT Genio Topological Visualization
 - Crude Oil Price Prediction based on GKFN
 - Tensor Decomposition for Deepfake Detection
 - Pet-caring Robots
