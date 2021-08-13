@@ -3,7 +3,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Coursework"
-  	url: /coursework/
+    url: /coursework/
   - title: "Notes"
     url: /notes/
   - title: "Projects"
