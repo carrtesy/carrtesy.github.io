@@ -21,7 +21,7 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 ## Academics
 
-- [Aug 2021 - Present] Master Student at *KAIST GSAI* ,South Korea  (Advisor: Prof. [Jaegul Choo](https://sites.google.com/site/jaegulchoo/) )
+- [Aug 2021 - Present] Master Student at *KAIST GSAI*, South Korea (Advisor: Prof. [Jaegul Choo](https://sites.google.com/site/jaegulchoo/))
 - [Mar 2014 - Feb 2021] Bachelor's Degree in *Global Economics* and *Computer Science* at *Sungkyunkwan University*, South Korea
 - [Aug 2019 - Nov 2019] Exchange Student at *The Chinese University of Hong Kong*
 - [Mar 2011 - Feb 2014] *Chinese Department* at *Myungduk Foreign Language High School*, South Korea
