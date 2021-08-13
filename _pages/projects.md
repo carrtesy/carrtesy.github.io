@@ -7,6 +7,18 @@ layout: single
 author_profile: true
 ---
 
+### KT Genio Topological Visualization (July 2021 ~ Aug 2021)
+
+*From data to graph, using javascript!*
+
+For my Internship Project at KT, I developed topological map for IT infrastructure using javascript D3 library.
+
+Deployed website can be found [here](http://topovis.de.r.appspot.com/).
+
+![gkfn](/assets/images/about/topovis.gif)
+
+
+
 ### Crude Oil Price Prediction based on GKFN (Mar 2020 ~ Nov 2020)
 
 *My very first thesis here on Modeling!*
