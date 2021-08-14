@@ -7,26 +7,60 @@ layout: single
 author_profile: true
 ---
 
+
+
+Here are the lists of my coursework.
+
+
+
 ## Deep Learning, Machine Learning
 
-- CS231n
+| Course | From                        |
+| ------ | --------------------------- |
+| CS231n | Standford University Online |
 
 
 
 ## Mathematics
 
-- Linear Algebra
-- Analysis 1, 2
+| Course                         | From              |
+| ------------------------------ | ----------------- |
+| Linear Algebra                 | MITOpenCourseWare |
+| Linear Algebra                 | SKKU              |
+| Mathematical Analysis 1, 2     | SKKU              |
+| Set Theory                     | SKKU              |
+| Discrete Mathematics           | SKKU              |
+| Probability and Random Process | SKKU              |
+| Numerical Analysis             | SKKU              |
+| Calculus 1, 2                  | SKKU              |
 
 
 
 ## Computer Science
 
-- Data Structure
-- Algorithms
+| Course                   | From |
+| ------------------------ | ---- |
+| Data Structures          | SKKU |
+| Algorithms               | SKKU |
+| Database                 | SKKU |
+| System Programming       | SKKU |
+| Computer Organization    | SKKU |
+| Problem Solving          | SKKU |
+| Operating Systems        | SKKU |
+| Logic Circuits           | SKKU |
+| Embedded Systems Project | SKKU |
 
 
 
 ## Economics & Others
 
-- Advanced Macroeconomics
+| Course                                     | From |
+| ------------------------------------------ | ---- |
+| Intro/Intermediate/Advanced Microeconomics | SKKU |
+| Intro/Intermediate/Advanced Macroeconomics | SKKU |
+| Financial Economics                        | SKKU |
+| Econometrics/ Statistics for Economics     | SKKU |
+| Asset Pricing                              | SKKU |
+| Financial Accounting                       | SKKU |
+| International Economics                    | SKKU |
+
