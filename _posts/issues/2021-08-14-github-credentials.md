@@ -39,25 +39,25 @@ We should instead get tokens from Github.
 
 1. Log in and go to settings.
 
-   ![settings](../../assets/images/issue/0814_github_auth_token/settings)
+   ![settings](../assets/images/issue/0814_github_auth_token/settings)
 
 2. Go to Developer settings.
 
-   ![devset](../../assets/images/issue/0814_github_auth_token/devset)
+   ![devset](../assets/images/issue/0814_github_auth_token/devset)
 
 3. Go to Personal Access Token, and push "generate new token".
 
-   ![token](../../assets/images/issue/0814_github_auth_token/token)
+   ![token](../assets/images/issue/0814_github_auth_token/token)
 
 4. Set the detail. "repo" option needs to be checked, as it deals with access for the repository. 
 
-   ![tokendetail](../../assets/images/issue/0814_github_auth_token/tokendetail)
+   ![tokendetail](../assets/images/issue/0814_github_auth_token/tokendetail)
 
 Access key vanishes, so **copy it elsewhere!**
 
 With issued token, we should log in with it instead. 
 
-![mytoken](../../assets/images/issue/0814_github_auth_token/mytoken)
+![mytoken](../assets/images/issue/0814_github_auth_token/mytoken)
 
 ```bash
 $ git push origin master
@@ -80,7 +80,7 @@ $ git config --global --unset credential.helper
 Reset by:
 
 ```bash
-$ git config --global credential.helper cache
+$ git config credential.helper store
 ```
 
 Log in:
