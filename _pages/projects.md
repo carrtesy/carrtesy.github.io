@@ -15,9 +15,6 @@ For my Internship Project at KT, I developed topological map for IT infrastructu
 
 Deployed website can be found [here](http://topovis.de.r.appspot.com/).
 
-<iframe src="http://topovis.de.r.appspot.com">
-    <p>This browser does not support iframe.</p>
-</iframe>
 
 ![topovis](/assets/images/about/topovis.gif)
 
