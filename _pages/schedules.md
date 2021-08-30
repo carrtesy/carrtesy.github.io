@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "Schedules"
 date: 2021-05-19
 last_modified_at: 2020-08-30
 permalink: /schedules/
