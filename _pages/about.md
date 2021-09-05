@@ -7,7 +7,7 @@ layout: single
 author_profile: true
 ---
 
-Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/16VNPoMc63Xtdj8lpLPS_MjkqgwiDNGIl/view?usp=sharing) here.
+Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1_yjzsl4WMJEbucLYHwE1hKsq5p60r5mb/view?usp=sharing) here.
 
 
 
