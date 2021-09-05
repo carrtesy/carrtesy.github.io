@@ -7,15 +7,13 @@ layout: single
 author_profile: true
 ---
 
-Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1Qg-GGGiDWKKaUqvxoGnjdjX_U3-1y6kS/view?usp=sharing) here.
+Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1o-3GNMB16lOr8WuARJjQXGQITxlRkk7_/view?usp=sharing) here.
 
 
 
 ## Recently Working
 
-1. I'm Interested in Algorithmic Trading Strategies, and now trying Reinforcement Learning for that project. You may visit my [github repo](https://github.com/dongminkim0220/bitmagic) for current status.
-
-![crypto](/assets/images/about/crypto.png)
+I am now at KAIST GSAI. My main research area now is Time Series Modelling. 
 
 
 
