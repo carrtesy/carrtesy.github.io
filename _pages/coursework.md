@@ -1,7 +1,7 @@
 ---
 title: "Coursework"
 date: 2021-08-13
-last_modified_at: 2021-08-13
+last_modified_at: 2022-01-17
 permalink: /coursework/
 layout: single
 author_profile: true
@@ -15,9 +15,12 @@ Here are the lists of my coursework.
 
 ## Deep Learning, Machine Learning
 
-| Course | From                        |
-| ------ | --------------------------- |
-| CS231n | Standford University Online |
+| Course                                                       | From                                    |
+| ------------------------------------------------------------ | --------------------------------------- |
+| Convolutional Neural Networks for Visual Recognition (CS231n) | Standford University Online             |
+| Programming for AI (AI504)                                   | KAIST                                   |
+| Machine Learning for AI (AI501)                              | KAIST                                   |
+| Machine Learning (Andrew Ng)                                 | Standford Universitiy Online (Coursera) |
 
 
 
