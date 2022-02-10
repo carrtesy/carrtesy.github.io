@@ -1,5 +1,5 @@
 ---
-title: "pytorch_cheatsheet"
+title: "Pytorch cheatsheet"
 date: 2022-01-25
 last_modified_at: 2022-01-25
 categories:
