@@ -13,9 +13,13 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 ## Recently Working
 
-I am now at KAIST GSAI. 
+I am pursuing my master's degree in Artificial Intelligence at KAIST GSAI.
 
-My interest now is on *Time Series Modeling*, *Anomaly Detection*, and *Graph Neural Network*.
+Recently, I joined NAVER AI Lab as a visiting Researcher.
+
+My research interest now is on *Time Series Modeling*, *Anomaly Detection*, and *Graph Neural Network*.
+
+![NAVER](/assets/images/about/NAVER.jpg)
 
 
 
