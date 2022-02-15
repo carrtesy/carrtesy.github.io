@@ -1,5 +1,5 @@
 ---
-title: "[Issues] Token Authentication for Github"
+title: "Token Authentication for Github"
 
 date: 2021-08-14
 last_modified_at: 2021-08-14

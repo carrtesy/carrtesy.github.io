@@ -1,5 +1,5 @@
 ---
-title: "[Computer Vision] Try MNIST with Keras 1: Linear Model as a basecamp"
+title: "Try MNIST with Keras 1: Linear Model as a basecamp"
 date: 2021-08-03
 last_modified_at: 2021-08-03
 categories:

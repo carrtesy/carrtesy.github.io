@@ -1,5 +1,5 @@
 ---
-title: "[Problem Solving] N for Loops"
+title: "N for Loops"
 date: 2021-10-03
 last_modified_at: 2021-10-03
 

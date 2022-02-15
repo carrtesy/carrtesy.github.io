@@ -1,5 +1,5 @@
 ---
-title: "[Computer Vision] Try MNIST with Keras 2: 99% with CNN"
+title: "Try MNIST with Keras 2: 99% with CNN"
 date: 2021-08-04
 last_modified_at: 2021-08-04
 categories:
