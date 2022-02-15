@@ -13,12 +13,15 @@ Nice to meet you! I'm **Dongmin Kim (Tommy)** from Korea. I'm deeply interested 
 
 ## Recently Working
 
-I am now at KAIST GSAI. My main research area now is Time Series Modelling. 
+I am now at KAIST GSAI. 
+
+My interest now is on *Time Series Modeling*, *Anomaly Detection*, and *Graph Neural Network*.
 
 
 
 ## Academics
 
+- [Feb 2022 - Present] Visiting Researcher of NAVER Clova, South Korea
 - [Aug 2021 - Present] Master Student at *KAIST GSAI*, South Korea (Advisor: Prof. [Jaegul Choo](https://sites.google.com/site/jaegulchoo/))
 - [Mar 2014 - Feb 2021] Bachelor's Degree in *Global Economics* and *Computer Science* at *Sungkyunkwan University*, South Korea
 - [Aug 2019 - Nov 2019] Exchange Student at *The Chinese University of Hong Kong*
@@ -53,3 +56,10 @@ I believe programming practice is essential to SW development, so I sometimes us
 2. [Baekjoon](https://www.acmicpc.net/) is a Korean online judge platform for Programming Practice, and I've solved **200** problems and ranked **8072** until **May 19th, 2021**. Here is [my info](https://www.acmicpc.net/user/ehdals56).
 3. [Programmers](https://programmers.co.kr/) is another Korean Programming Practice platform, and I've solved **131** programming & SQL problems and ranked **2353** until **May 19th, 2021**.
 
+
+
+## Schedules
+
+To make an appointment, see my schedules below.
+
+<iframe src="https://calendar.google.com/calendar/embed?src=tommy.dm.kim%40gmail.com&ctz=Asia%2FSeoul" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>

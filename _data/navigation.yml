@@ -8,8 +8,6 @@ main:
     url: /notes/
   - title: "Projects"
     url: /projects/
-  - title: "Schedules"
-    url: /schedules/
   - title: "Talks"
     url: /talks/
   #- title: "Tags"

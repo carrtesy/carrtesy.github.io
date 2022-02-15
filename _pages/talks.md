@@ -1,5 +1,5 @@
 ---
-title: "Talks I Did"
+title: "Talks"
 date: 2022-01-17
 last_modified_at: 2022-01-17
 permalink: /talks/
