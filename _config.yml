@@ -21,9 +21,9 @@ title_separator          : "-"
 subtitle                 : ""
 name                     : "Tommy's Lab"
 description              : "Website for Dongmin Kim"
-url                      : "https://dongminkim0220.github.io"
+url                      : "https://carrtesy.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "dongminkim0220/dongminkim0220.github.io"
+repository               : "carrtesy/carrtesy.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/home.svg"
 masthead_title           : " "
@@ -103,7 +103,7 @@ social:
 analytics:
   provider               : "google-gtag"
   google:
-    tracking_id          : "UA-161108001-1"
+    tracking_id          : "G-8V4M4509XJ"
     anonymize_ip         : # true, false (default)
 
 
@@ -120,7 +120,7 @@ author:
       url: "mailto:tommy.dm.kim@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/dongminkim0220"
+      url: "https://github.com/carrtesy"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/dong_min_ic"
@@ -133,7 +133,7 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/dongminkim0220"
+      url: "https://github.com/carrtesy"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/dong_min_ic"
