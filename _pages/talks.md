@@ -20,4 +20,4 @@ https://github.com/carrtesy/tommys-awesome-lectures
 ### Presentations
 
 - [Distilling a Neural Network Into a Soft Decision Tree](https://www.youtube.com/watch?v=OStijemcGiY), Machine Learning for AI (AI501) 
-- [Semi-Supervised Classification with Graph Convolutional Networks](https://www.youtube.com/watch?v=HbIUxhzquvU), DAVIAN Lab Seminar(1st December, 2021)
+- [Spectral View of GCN](https://www.youtube.com/watch?v=HbIUxhzquvU), DAVIAN Lab Seminar (1st December, 2021)
