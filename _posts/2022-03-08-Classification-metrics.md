@@ -25,7 +25,7 @@ Sometimes, accuracy isn't enough as a metric to evaluate classifier's performanc
 
 Accuracy is (a bit informally) defined as:
 
-$ accuracy = \frac{How many correct answers have you made}{How many questions are there} $
+$ accuracy = \frac{How\ many\ correct\ answers\ you\ made}{How\ many\ questions\ are\ there} $
 
 Simple enough. What's the problem with this?
 
@@ -35,7 +35,7 @@ Consider a following situation.
 
 >Tommy predicts tomorrow's weather every night (sunny or rainy). 
 >
->His prediction accuracy is **90%**!
+>His prediction accuracy is **90%**.
 
 Seems great, but what if:
 
@@ -43,7 +43,7 @@ Seems great, but what if:
 >
 >**He predicts "sunny" every time.**
 >
->His prediction accuracy is **90%**!
+>His prediction accuracy is **90%**.
 
 
 
