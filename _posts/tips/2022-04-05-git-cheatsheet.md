@@ -12,6 +12,22 @@ tags:
 Here are some useful tips to use git. 
 
 
+## Git
+### add
+```
+git add {filename/dirname}
+```
+
+### status
+```
+git status
+```
+
+### diff
+```
+git diff {filename}
+```
+
 ## Branch
 ### Making a branch
 ```
@@ -32,3 +48,4 @@ git remote -v
 git remote set-url {remote repo alias} {url of remote}
 git remote set-url origin https://abc.git
 ```
+
