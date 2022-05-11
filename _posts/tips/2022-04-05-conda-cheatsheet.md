@@ -10,9 +10,28 @@ tags:
 
 Here are some useful tips to set conda environments. 
 
+## Settings
+```
+conda create -n {env_name} python=3.9
+```
+
+```
+conda install -y matplotlib
+```
+
 ## List up
+### The environments
 ```
 conda info --envs
+```
+### Packages in the environments
+```
+conda list -n {env_name}
+```
+
+## Installations
+```
+conda install -y pip matplotlib seaborn pandas numpy notebook scikit-learn && conda install -y pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch && pip install tensorboard
 ```
 
 ## Renaming conda environment
