@@ -37,9 +37,9 @@ So here, we would like to find $\theta$ that maximizes $ P(Y \| X ; \theta ) $.
 
 Let's introduce other assumptions, as follows:
 
-> Assumption 1. Samples are iid.
+- Assumption 1. Samples are iid.
 
-> Assumption 2. $ P(y|x) $ follows Normal distribution with the same variance, i.e., $ P(y\|x) = \frac{1}{sqrt{2\pi}\sigma} e^{-frac{y-yhat}{2\sigma^2}} $
+- Assumption 2. $ P(y|x) $ follows Normal distribution with the same variance, i.e., $ P(y\|x) = \frac{1}{sqrt{2\pi}\sigma} e^{-frac{y-yhat}{2\sigma^2}} $
 
 From those assumptions, our objective becomes,
 
