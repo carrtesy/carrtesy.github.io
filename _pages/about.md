@@ -23,6 +23,18 @@ My research interest now is on *Time Series Modeling*, *Anomaly Detection*, and 
 
 
 
+## Publications
+
+- **WaveBound: Dynamically Bounding Error for Stable Time-Series Forecasting**
+  Youngin Cho,* Daejin Kim,* Dongmin Kim, Mohammad Azam Khan, and **Jaegul Choo** (*: equal contributions)
+  Conference on Neural Information Processing Systems ([**NeurIPS**](https://www.google.com/url?q=https%3A%2F%2Fneurips.cc%2F&sa=D&sntz=1&usg=AOvVaw1JiC4swoToVbKvh-Wv6h-K)), 2022, *Accepted* (25.6% acceptance rate).
+
+- **Residual Correction in Real-Time Traffic Forecasting**
+  Daejin Kim,* Youngin Cho,* Dongmin Kim, Cheonbok Park, and **Jaegul Choo** (*: equal contributions)
+  ACM International Conference on Information and Knowledge Management ([**CIKM**](https://www.google.com/url?q=https%3A%2F%2Fwww.cikm2022.org%2F&sa=D&sntz=1&usg=AOvVaw2t7El8FT8A8rXgRBA9dTK-)), 2022, *Accepted*.
+
+  
+
 ## Academics
 
 - [Feb 2022 - Present] Visiting Researcher of NAVER Clova, South Korea

@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Tommy's Lab"
+title                    : "Tommy's Tech Blog"
 title_separator          : "-"
 subtitle                 : ""
-name                     : "Tommy's Lab"
+name                     : "Tommy's Tech Blog"
 description              : "Website for Dongmin Kim"
 url                      : "https://carrtesy.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -109,9 +109,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Tommy Kim"
+  name             : "Dongmin Kim (Tommy)"
   avatar           : "/assets/images/insta_profile.jpg"
-  bio              : "Think, read, write, make, and change!"
+  bio              : "AI Researcher @KAIST"
   location         : "Seoul, Korea"
   email            :
   links:
