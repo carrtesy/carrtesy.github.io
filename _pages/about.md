@@ -9,8 +9,6 @@ author_profile: true
 
 Nice to meet you! I'm **Dongmin Kim** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1XTbvrhxE4QzOSPcg7MUz-kYguzdkbJWB/view?usp=share_link) here.
 
-<object data="/assets/Tommy_CV_v20230104.pdf" width="1000" height="1000" type='application/pdf'/>
-
 
 
 ## Publications
