@@ -2,7 +2,7 @@
 title: "About Me"
 date: 2021-05-19
 last_modified_at: 2020-06-22
-permalink: /
+permalink: /about/
 layout: single
 author_profile: true
 ---
