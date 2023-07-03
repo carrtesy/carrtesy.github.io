@@ -7,7 +7,7 @@ layout: single
 author_profile: true
 ---
 
-Nice to meet you! I'm **Dongmin Kim** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/1XTbvrhxE4QzOSPcg7MUz-kYguzdkbJWB/view?usp=share_link) here.
+Nice to meet you! I'm **Dongmin Kim** from Korea. I'm deeply interested in SW & Mathematical background behind it, and now trying to change the way people live with SW technology. I'm using this blog as my storage for my knowledges and technologies that I've been now working for. For more formal introduction of me, you may visit my [CV](https://drive.google.com/file/d/16TpY5QFOK3Tj1Tx5dGl7-akI6vth6t2c/view?usp=drive_link) here.
 
 
 
@@ -23,11 +23,15 @@ Nice to meet you! I'm **Dongmin Kim** from Korea. I'm deeply interested in SW & 
   - Daejin Kim,* Youngin Cho,* **Dongmin Kim**, Cheonbok Park, and Jaegul Choo (*: equal contributions)
     ACM International Conference on Information and Knowledge Management ([**CIKM**](https://www.google.com/url?q=https%3A%2F%2Fwww.cikm2022.org%2F&sa=D&sntz=1&usg=AOvVaw2t7El8FT8A8rXgRBA9dTK-)), 2022, *Accepted*.
 
+- **Deep Imbalanced Time-series Forecasting via Local Discrepancy Density**
+
+  - Junwoo Park, Jungsoo Lee, Youngin Cho, Woncheol Shin, **Dongmin Kim**, Jaegul Choo, and Edward Choi 
+  
+    European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases ([**ECML/PKDD**](https://2023.ecmlpkdd.org/)), 2023
   
 
 ## Academics
 
-- [Feb 2022 - Present] Visiting Researcher of NAVER Clova, South Korea
 - [Aug 2021 - Present] Master Student at *KAIST GSAI*, South Korea (Advisor: Prof. [Jaegul Choo](https://sites.google.com/site/jaegulchoo/))
 - [Mar 2014 - Feb 2021] Bachelor's Degree in *Global Economics* and *Computer Science* at *Sungkyunkwan University*, South Korea
 - [Aug 2019 - Nov 2019] Exchange Student at *The Chinese University of Hong Kong*
