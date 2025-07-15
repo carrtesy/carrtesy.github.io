@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Dongmin Kim.
-- 🌱 I’m currently working on Deep-learning-based time-series researches.
+- 🌱 I’m currently working interested in Anomaly Detection, and other related topics.
 - 💞️ I’m looking forward to collaborating on any projects that make people's live better!
 - 📫 See you!
 
