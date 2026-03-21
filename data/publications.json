@@ -1,0 +1,89 @@
+[
+  {
+    "title": "AEGIS: Toward Expert-in-the-loop Industrial Anomaly Detection",
+    "venue": "AAAI 2026 (Demo)",
+    "authors": "<strong>Dongmin Kim</strong>, Ye Seul Sim, Suhee Yoon, Sanghyu Yoon, Seungdong Yoa, Soonyoung Lee, Woohyung Lim",
+    "image": "assets/img/papers/AAAI26_AEGIS.png",
+    "pdf": null,
+    "blogUrl": "https://www.lgresearch.ai/blog/view?seq=633",
+    "story": "My first work at LG AI Research, and an attempt to put together what I think a real anomaly detection system should look like. \"Normal\" is an inherently fuzzy concept — so the system has to be built alongside domain experts, incorporating their feedback as it goes. And to make that possible, the system needs to continuously surface insights from the data and surrounding context, giving experts something meaningful to react to.",
+    "storyDate": "Feb 28, 2026",
+    "links": [
+      { "label": "Blog", "url": "https://www.lgresearch.ai/blog/view?seq=633" }
+    ]
+  },
+  {
+    "title": "ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection",
+    "venue": "ICLR 2026",
+    "authors": "Sanghyu Yoon*, <strong>Dongmin Kim*</strong>, Suhee Yoon, Ye Seul Sim, Seungdong Yoa, Hye-Seung Cho, Soonyoung Lee, Hankook Lee, Woohyung Lim",
+    "image": "assets/img/papers/ICLR26_ReTabAD.png",
+    "pdf": "https://arxiv.org/pdf/2510.02060.pdf",
+    "blogUrl": null,
+    "story": "What does \"anomalous\" even mean in manufacturing? The answer lives in the meaning of the data, not just the numbers — a column labeled \"pressure\" is not just another float. This benchmark was built to quantify exactly how much semantic context matters.",
+    "storyDate": "Jan 22, 2026",
+    "links": [
+      { "label": "Project", "url": "https://yoonsanghyu.github.io/ReTabAD/" },
+      { "label": "arXiv", "url": "https://arxiv.org/abs/2510.02060" },
+      { "label": "Dataset", "url": "https://huggingface.co/datasets/LGAI-DILab/ReTabAD" },
+      { "label": "Code", "url": "https://github.com/yoonsanghyu/ReTabAD" }
+    ]
+  },
+  {
+    "title": "Representation Space Augmentation for Effective Self-Supervised Learning on Tabular Data",
+    "venue": "AAAI 2025",
+    "authors": "Moonjung Eo, Kyungeun Lee, Hye-Seung Cho, <strong>Dongmin Kim</strong>, Ye Seul Sim, Woohyung Lim",
+    "image": "assets/img/papers/AAAI25_Ratab.png",
+    "pdf": null,
+    "blogUrl": null,
+    "story": "",
+    "storyDate": "",
+    "links": []
+  },
+  {
+    "title": "When Model Meets New Normals: Test-time Adaptation for Unsupervised Time-series Anomaly Detection",
+    "venue": "AAAI 2024",
+    "authors": "<strong>Dongmin Kim</strong>, Sunghyun Park, Jaegul Choo",
+    "image": "assets/img/papers/AAAI24_M2N2.png",
+    "pdf": "https://arxiv.org/pdf/2312.11976.pdf",
+    "blogUrl": null,
+    "story": "My first first-author paper, and my master's thesis. I was staring at metrics all day when I noticed the model's error rate kept growing over time — not random noise, but a clear trend. \"Normal\" was shifting, and the model couldn't keep up. That observation became the question, and the question became this paper.",
+    "storyDate": "Dec 19, 2023",
+    "links": [
+      { "label": "arXiv", "url": "https://arxiv.org/abs/2312.11976" },
+      { "label": "Code", "url": "https://github.com/carrtesy/M2N2" }
+    ]
+  },
+  {
+    "title": "Deep Imbalanced Time-series Forecasting via Local Discrepancy Density",
+    "venue": "ECML/PKDD 2023",
+    "authors": "Junwoo Park, Jungsoo Lee, Youngin Cho, Woncheol Shin, <strong>Dongmin Kim</strong>, Jaegul Choo, Edward Choi",
+    "image": "assets/img/papers/PKDD23_DeepImbTS.png",
+    "pdf": "https://arxiv.org/pdf/2302.13563.pdf",
+    "blogUrl": null,
+    "story": "",
+    "storyDate": "",
+    "links": []
+  },
+  {
+    "title": "WaveBound: Dynamic Error Bounds for Stable Time Series Forecasting",
+    "venue": "NeurIPS 2022",
+    "authors": "Youngin Cho*, Daejin Kim*, <strong>Dongmin Kim</strong>, Mohammad Azam Khan, Jaegul Choo",
+    "image": "assets/img/papers/NeurIPS22_WaveBound.png",
+    "pdf": "https://arxiv.org/pdf/2210.14303.pdf",
+    "blogUrl": null,
+    "story": "",
+    "storyDate": "",
+    "links": []
+  },
+  {
+    "title": "Residual Correction in Real-Time Traffic Forecasting",
+    "venue": "CIKM 2022",
+    "authors": "Daejin Kim*, Youngin Cho*, <strong>Dongmin Kim</strong>, Cheonbok Park, Jaegul Choo",
+    "image": "assets/img/papers/CIKM22_ResCAL.png",
+    "pdf": "https://arxiv.org/pdf/2209.05406.pdf",
+    "blogUrl": null,
+    "story": "",
+    "storyDate": "",
+    "links": []
+  }
+]

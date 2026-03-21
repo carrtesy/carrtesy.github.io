@@ -1,0 +1,21 @@
+[
+  {
+    "date": "2021 - 2023",
+    "title": "M.S. in Artificial Intelligence",
+    "organization": "KAIST, DAVIAN Lab",
+    "link": "https://davian.kaist.ac.kr/people",
+    "media": "assets/img/master.mp4",
+    "mediaType": "video",
+    "story": "I started the program without really knowing what data science or AI meant. I gave up job offers to come here, so I pushed myself to make it count. There was so much to learn, and it was hard — but I don't think I've ever invested so fully in my own growth, and even small wins felt genuinely rewarding. Honestly, I wasn't sure if AI research was the right fit for me. But watching how fast the field is moving now, it's equal parts exciting and terrifying.",
+    "storyDate": "Feb 2023"
+  },
+  {
+    "date": "2014 - 2021",
+    "title": "B.S. in Economics & Computer Science",
+    "organization": "Sungkyunkwan University",
+    "media": "assets/img/undergrad.jpg",
+    "mediaType": "image",
+    "story": "I came in as an economics student. Then I took an intro programming course and something clicked — this is work that actually helps people. And when I found myself pulling all-nighters on code not because I had to, but because I wanted to, I figured this must be the right path. Picked up a computer science double major and didn't look back.",
+    "storyDate": "Feb 2021"
+  }
+]
