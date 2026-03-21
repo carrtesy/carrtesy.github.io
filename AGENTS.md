@@ -2,27 +2,34 @@
 
 ## Project Overview
 
-A GitHub Pages-based personal portfolio website, replacing the previous Google Sites (https://sites.google.com/view/tommy-dm-kim/about-me).
+GitHub Pages personal portfolio, replacing the previous Google Sites.
+Live URL: **https://carrtesy.github.io/**
 
 ## Tech Stack
 
-- **Frontend**: Pure HTML/CSS/JavaScript
-- **Design**: Minimal academic style
-- **Data**: JSON-based content management (easy to modify)
-- **Hosting**: GitHub Pages
+- **Frontend**: Pure HTML/CSS/JavaScript (no frameworks)
+- **Data**: JSON files per section — edit content without touching HTML
+- **Hosting**: GitHub Pages (`carrtesy/carrtesy.github.io`, `master` branch)
 
 ## File Structure
 
 ```
-carrtesy/
-├── index.html          # Main page (dynamic JSON loading)
-├── style.css           # Stylesheet (responsive)
-├── data.json           # Content data (editable)
-├── AGENTS.md           # Project documentation
+├── index.html              # Main page — renders all sections from JSON
+├── style.css               # All styles (responsive, modal, link preview)
+├── AGENTS.md               # This file
+├── data/
+│   ├── profile.json        # Name, title, email, social links, profile image
+│   ├── about.json          # About Me text
+│   ├── experience.json     # Work experience entries
+│   ├── education.json      # Education entries
+│   ├── publications.json   # Paper list
+│   └── footer.json         # Footer year and name
 └── assets/
     └── img/
-        ├── profile.jpg
-        └── papers/     # Publication images
+        ├── profile.jpg     # Profile photo
+        ├── undergrad.JPG   # Undergrad photo (education modal)
+        ├── master.mp4      # Master's video (education modal)
+        └── papers/         # Publication thumbnail images
             ├── AAAI26_AEGIS.png
             ├── ICLR26_ReTabAD.png
             ├── AAAI25_Ratab.png
@@ -32,100 +39,84 @@ carrtesy/
             └── CIKM22_ResCAL.png
 ```
 
-## Data Structure (data.json)
+## Data Schemas
 
-To modify content, simply edit the `data.json` file.
-
-### Profile
+### data/profile.json
 ```json
 {
-  "profile": {
-    "name": "Dongmin Kim",
-    "title": "AI Research Scientist @ LG AI Research",
-    "image": "assets/img/profile.jpg",
-    "email": "tommy.dm.kim@gmail.com",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/dongmin-kim-7056aa182/",
-      "github": "https://github.com/carrtesy",
-      "scholar": "https://scholar.google.com/citations?user=kXKN8DwAAAAJ&hl=en"
-    }
+  "name": "Dongmin Kim",
+  "title": "AI Research Scientist @ LG AI Research",
+  "image": "assets/img/profile.jpg",
+  "email": "tommy.dm.kim@gmail.com",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/dongmin-kim-7056aa182/",
+    "github": "https://github.com/carrtesy",
+    "scholar": "https://scholar.google.com/citations?user=kXKN8DwAAAAJ&hl=en"
   }
 }
 ```
 
-### Publications
+### data/publications.json
 ```json
-{
-  "title": "Paper title",
-  "venue": "Conference/Journal Year",
-  "authors": "Author list (use <strong>Name</strong> for emphasis)",
-  "image": "assets/img/papers/image.png",
-  "links": [
-    { "label": "arXiv", "url": "https://..." },
-    { "label": "Code", "url": "https://..." }
-  ]
-}
+[
+  {
+    "title": "Paper title",
+    "venue": "Conference Year",
+    "authors": "Author list (use <strong>Name</strong> to bold your name)",
+    "image": "assets/img/papers/image.png",
+    "pdf": "https://arxiv.org/pdf/...",        // null if not available
+    "blogUrl": "https://...",                   // null if not available
+    "story": "Personal comment shown in modal", // "" if none
+    "storyDate": "Jan 1, 2025",                 // "" if none
+    "links": [
+      { "label": "arXiv", "url": "https://..." },
+      { "label": "Code",  "url": "https://..." }
+    ]
+  }
+]
 ```
 
-### Education (with optional link)
+### data/experience.json / data/education.json
 ```json
-{
-  "date": "2021 - 2023",
-  "title": "M.S. in Artificial Intelligence",
-  "organization": "KAIST, DAVIAN Lab",
-  "link": "https://davian.kaist.ac.kr/people"
-}
+[
+  {
+    "date": "Aug 2023 - Present",
+    "title": "AI Research Scientist",
+    "organization": "LG AI Research",
+    "link": "https://...",          // shown as [News] or [Website] in modal
+    "media": "assets/img/...",      // image or video shown in modal body (education only)
+    "mediaType": "image | video",   // education only
+    "story": "Personal comment",
+    "storyDate": "Mar 2026"
+  }
+]
 ```
 
-## Request History
+## Features
 
-### 1. Initial Setup
-- [x] Create GitHub Pages portfolio website
-- [x] Reference existing Google Sites content
-- [x] Use pure HTML/CSS
-- [x] Minimal academic style design
-
-### 2. Content
-- [x] Write content in English
-- [x] Reflect accurate publication list from Google Scholar
-- [x] Add links for each paper (arXiv, Code, Project, Dataset, etc.)
-- [x] About: Mention interest in developing Industrial Agentic AI
-
-### 3. Contact/Links
-- [x] Email: tommy.dm.kim@gmail.com
-- [x] LinkedIn: https://www.linkedin.com/in/dongmin-kim-7056aa182/
-- [x] Google Scholar: https://scholar.google.com/citations?user=kXKN8DwAAAAJ&hl=en
-- [x] Remove Twitter
-
-### 4. Images
-- [x] Add images for each publication
-- [x] Organize image folder: `assets/img/papers/`
-- [x] Maintain image aspect ratio (prevent cropping)
-
-### 5. Additional Links
-- [x] AEGIS paper: Blog link (https://www.lgresearch.ai/blog/view?seq=633)
-- [x] DAVIAN Lab link (https://davian.kaist.ac.kr/people)
-
-### 6. Structural Improvements
-- [x] Separate content into JSON (data.json)
-- [x] Update year to 2026
+- **Publications modal**: click a paper → left panel shows personal story comment, right panel shows PDF (arXiv) inline or a link preview card for external blog posts
+- **Experience/Education modal**: same left story panel; experience shows link preview card, education shows image or autoplay video
+- **Link preview card**: for URLs blocked by `X-Frame-Options` (LG AI Research pages), fetches OpenGraph metadata via `microlink.io` API and renders a thumbnail + title card that opens in a new tab
+- **Expand icon** (↗): shown on list items that have modal content
+- **Responsive**: mobile layout stacks story panel above content panel
 
 ## Local Development
 
 ```bash
-# Start local server
 python3 -m http.server 8000
-
-# Open in browser
 open http://localhost:8000
 ```
 
-## Deployment (GitHub Pages)
+> Must use a local server — `fetch()` is blocked on `file://` protocol.
+
+## Deployment
+
+Remote: `https://github.com/carrtesy/carrtesy.github.io.git` (`master` branch)
 
 ```bash
-git add .
+git add -A
 git commit -m "Update portfolio"
-git push
+git push origin master
 ```
 
-GitHub → Settings → Pages → Source: `main` branch
+Pages is served from `master` branch root (`/`).
