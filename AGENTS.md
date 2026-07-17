@@ -11,12 +11,26 @@ Live URL: **https://carrtesy.github.io/**
 - **Data**: JSON files per section — edit content without touching HTML
 - **Hosting**: GitHub Pages (`carrtesy/carrtesy.github.io`, `master` branch)
 
+## Design
+
+Terminal (tmux) concept, amber-phosphor palette. The whole page is one terminal window:
+sections render as shell commands (`whoami --verbose`, `cat about.md`,
+`git log --career --graph`, `ls publications/`, `ping dongmin`). Clicking a career
+commit or publication opens a **viewer pane** — a tmux-style vertical split on wide
+screens, a floating terminal-window modal on narrow/portrait screens. The viewer
+replays a sequence of typed commands (`show … --story`, `mpv video`, `imgcat photo`,
+`open paper.pdf`, `curl … --preview`, `ls -l links/`), each followed by its output
+(story chat bubble, video, image, embedded PDF, link-preview card, symlink-style
+link list). `q` / `Esc` / backdrop tap closes the pane. Typing animation is skipped
+under `prefers-reduced-motion`.
+
 ## File Structure
 
 ```
-├── index.html              # Main page — renders all sections from JSON
-├── style.css               # All styles (responsive, modal, link preview)
+├── index.html              # Main page — terminal UI, renders all sections from JSON
+├── style.css               # All styles (terminal theme, split pane / modal viewer)
 ├── AGENTS.md               # This file
+├── mockups/                # Design mockups (untracked drafts; A = shipped concept)
 ├── data/
 │   ├── profile.json        # Name, title, email, social links, profile image
 │   ├── about.json          # About Me text
@@ -92,13 +106,25 @@ Live URL: **https://carrtesy.github.io/**
 ]
 ```
 
+## Schema Additions (terminal UI)
+
+- `data/profile.json` → optional `"tags": ["time-series", …]` — chips under the name in `whoami` output
+- `data/about.json` → optional `"highlights": ["anomaly detection", …]` — substrings of `text` rendered in amber
+
 ## Features
 
-- **Publications modal**: click a paper → left panel shows personal story comment, right panel shows PDF (arXiv) inline or a link preview card for external blog posts
-- **Experience/Education modal**: same left story panel; experience shows link preview card, education shows image or autoplay video
-- **Link preview card**: for URLs blocked by `X-Frame-Options` (LG AI Research pages), fetches OpenGraph metadata via `microlink.io` API and renders a thumbnail + title card that opens in a new tab
-- **Expand icon** (↗): shown on list items that have modal content
-- **Responsive**: mobile layout stacks story panel above content panel
+- **Viewer pane** (split / modal): click a career commit or publication → typed-command
+  sequence renders story bubble, media (video/photo), embedded arXiv PDF, and links
+- **Command mapping**: story → `show <slug> --story`; video → `mpv <file> --loop`;
+  image → `imgcat <file>`; PDF → `open <slug>.pdf`; experience link → `curl … --preview`
+  (microlink.io preview card, for X-Frame-Options-blocked pages); links → `ls -l links/`
+  (symlink-style list from `links[]`, falling back to `pdf`/`blogUrl` when `links` is empty)
+- **First-author badge**: derived from `authors` markup — `<strong>` first → `1st author`,
+  `<strong>…*</strong>` → `co-1st`
+- **Fake commit hashes**: deterministic hash of title+organization; first career entry
+  whose date contains "Present" gets `(HEAD → now)`
+- **Responsive**: viewer is a tmux split ≥880px wide, a floating terminal modal below
+  (or portrait ≤1080px); tmux status bar tracks open windows
 
 ## Local Development
 

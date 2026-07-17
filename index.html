@@ -4,390 +4,453 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dongmin Kim | AI Research Scientist</title>
+    <meta name="description" content="Dongmin Kim — AI Research Scientist at LG AI Research. Time-series analysis, anomaly detection, tabular data modeling, and Industrial Agentic AI.">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <img id="profile-img" src="" alt="" class="profile-img">
-            <h1 id="profile-name"></h1>
-            <p class="title" id="profile-title"></p>
-            <div class="social-links" id="social-links"></div>
-        </header>
 
-        <!-- About Section -->
-        <section class="section" id="about">
-            <h2>About Me</h2>
-            <p id="about-text"></p>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="section" id="experience">
-            <h2>Experience</h2>
-            <div class="timeline" id="experience-list"></div>
-        </section>
-
-        <!-- Education Section -->
-        <section class="section" id="education">
-            <h2>Education</h2>
-            <div class="timeline" id="education-list"></div>
-        </section>
-
-        <!-- Publications Section -->
-        <section class="section" id="publications">
-            <h2>Publications</h2>
-            <ul class="publication-list" id="publication-list"></ul>
-        </section>
-
-        <!-- Footer -->
-        <footer id="footer"></footer>
+<div class="term" id="term">
+    <div class="titlebar" aria-hidden="true">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span id="termtitle">dongmin@lgai — tmux — 132×40</span>
     </div>
 
-    <!-- Paper Modal -->
-    <div id="paper-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div class="modal-header">
-                <h2 id="modal-title"></h2>
-                <span id="modal-venue" class="pub-venue"></span>
-                <p id="modal-authors" class="modal-authors"></p>
-                <div id="modal-links" class="pub-links"></div>
-            </div>
-            <div class="modal-split">
-                <div id="modal-story" class="modal-story"></div>
-                <div id="modal-body" class="modal-body"></div>
+    <div class="panes">
+        <!-- left: main pane -->
+        <div class="screen" id="mainpane">
+
+            <section class="block">
+                <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">whoami --verbose</span></div>
+                <div class="out id">
+                    <figure>
+                        <img id="profile-img" src="" alt="">
+                        <figcaption class="imgcap" id="profile-imgcap"></figcaption>
+                    </figure>
+                    <div>
+                        <div class="name" id="profile-name"></div>
+                        <div class="role" id="profile-title"></div>
+                        <div class="tags" id="profile-tags"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="block">
+                <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">cat about.md</span></div>
+                <div class="out about">
+                    <span class="comment"># About</span><br>
+                    <span id="about-text"></span>
+                </div>
+            </section>
+
+            <section class="block">
+                <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">git log --career --graph</span>
+                    <span class="comment">&nbsp;# click a commit → opens in split pane</span></div>
+                <ul class="out glog" id="career-list"></ul>
+            </section>
+
+            <section class="block">
+                <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">ls publications/ --sort=year -r</span>
+                    <span class="comment">&nbsp;# click an entry → opens in split pane</span></div>
+                <div class="out">
+                    <div class="total" id="pub-total"></div>
+                    <ul class="pubs" id="publication-list"></ul>
+                </div>
+            </section>
+
+            <section class="block">
+                <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">ping dongmin</span></div>
+                <ul class="out ping" id="ping-list"></ul>
+            </section>
+
+            <div class="block cursorline"><b style="color:var(--ok);font-weight:400">dongmin@lgai</b>:<i style="color:var(--amber);font-style:normal">~</i> $ <span class="cursor" aria-hidden="true"></span></div>
+        </div>
+
+        <!-- right: viewer pane (split on wide screens, floating terminal modal on narrow) -->
+        <div class="viewer" id="viewer" role="region" aria-label="viewer pane">
+            <div class="viewer-win">
+                <div class="viewer-titlebar">
+                    <span class="mdots" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></span>
+                    <span class="panelabel">┌─ pane 1</span>
+                    <span class="ptitle" id="ptitle">viewer</span>
+                    <button id="closepane" title="close pane (q)">✕ q</button>
+                </div>
+                <div class="vbody" id="vbody">
+                    <div id="vsteps"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        // SVG Icons
-        const icons = {
-            linkedin: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
-            github: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
-            scholar: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>`,
-            email: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>`,
-            expand: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>`
-        };
+    <div class="tmuxbar">
+        <span class="sess">[dongmin]</span>
+        <span class="win active" id="w0">0:main*</span>
+        <span class="win" id="w1" hidden>1:viewer</span>
+        <span class="right" id="tmux-right"></span>
+    </div>
+</div>
 
-        let profileData = {};
-        let publicationsData = [];
-        let experienceData = [];
-        let educationData = [];
+<footer>
+    <span>hint: click any commit / publication · <b>q</b> closes the pane</span>
+    <span id="footer-copy"></span>
+</footer>
 
-        // Modal functions
-        function openModal(index) {
-            const pub = publicationsData[index];
-            const modal = document.getElementById('paper-modal');
+<script>
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            document.getElementById('modal-title').textContent = pub.title;
-            document.getElementById('modal-venue').textContent = pub.venue;
-            document.getElementById('modal-authors').innerHTML = pub.authors;
+// ── small utilities ──────────────────────────────
+function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function slugify(s){
+    return String(s).toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+function basename(p){ return String(p).split('/').pop(); }
+// deterministic fake git hash from a string
+function fakeHash(s){
+    let h = 5381;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+    return h.toString(16).padStart(7,'0').slice(0,7);
+}
+function shortUrl(url){
+    return url.replace(/^https?:\/\/(www\.)?/,'').replace(/\?.*$/,m=>m.length>18?m.slice(0,15)+'…':m);
+}
+function yearOf(venue){
+    const m = String(venue).match(/20\d\d/);
+    return m ? m[0] : '';
+}
+function firstAuthorTag(authors){
+    if (/^<strong>[^<]*\*/.test(authors)) return 'co-1st';
+    if (/^<strong>/.test(authors)) return '1st author';
+    if (/<strong>[^<]*\*<\/strong>/.test(authors)) return 'co-1st';
+    return null;
+}
 
-            // Links
-            const linksHTML = pub.links.length > 0
-                ? pub.links.map(link => `<a href="${link.url}" target="_blank">[${link.label}]</a>`).join('')
-                : '';
-            document.getElementById('modal-links').innerHTML = linksHTML;
+// ── data + viewer state ──────────────────────────
+let profileData = {};
+const VIEWS = {};   // id -> {title, steps:[{cmd, story|video|image|pdf|preview|links, venueLine}]}
 
-            // Story with profile
-            const storyEl = document.getElementById('modal-story');
-            if (pub.story && pub.story.trim() !== '') {
-                storyEl.innerHTML = `
-                    <div class="story-message">
-                        <img src="${profileData.image}" alt="${profileData.name}" class="story-avatar">
-                        <div class="story-bubble">
-                            <p>${pub.story}</p>
-                            ${pub.storyDate ? `<span class="story-date">${pub.storyDate}</span>` : ''}
-                        </div>
-                    </div>
-                `;
-                storyEl.style.display = 'flex';
-            } else {
-                storyEl.style.display = 'none';
-            }
+// ── viewer engine: typed command → output steps ──
+const term = document.getElementById('term');
+const vsteps = document.getElementById('vsteps');
+const ptitle = document.getElementById('ptitle');
+const w0 = document.getElementById('w0'), w1 = document.getElementById('w1');
+let typeToken = 0, activeRow = null;
 
-            // Body content (PDF or Blog)
-            const bodyEl = document.getElementById('modal-body');
-            if (pub.blogUrl) {
-                // Fetch blog content
-                bodyEl.innerHTML = '<div class="loading">Loading content...</div>';
-                bodyEl.style.display = 'block';
-                fetchBlogContent(pub.blogUrl, bodyEl);
-            } else if (pub.pdf) {
-                bodyEl.innerHTML = `<iframe src="${pub.pdf}" frameborder="0"></iframe>`;
-                bodyEl.style.display = 'block';
-            } else {
-                bodyEl.innerHTML = '<p class="no-content">Content not available yet.</p>';
-                bodyEl.style.display = 'block';
-            }
+function promptLine(withCursor){
+    const line = document.createElement('div');
+    line.className = 'vprompt';
+    line.innerHTML = '<b>dongmin@lgai</b>:<i>~</i> $ <span class="typed"></span>' +
+        (withCursor ? '<span class="cursor" aria-hidden="true"></span>' : '');
+    vsteps.appendChild(line);
+    return line;
+}
 
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+function storyEl(item){
+    const div = document.createElement('div');
+    div.className = 'story';
+    div.innerHTML = `<img src="${esc(profileData.image)}" alt="${esc(profileData.name)}">
+        <div class="bubble">${item.story}
+        ${item.storyDate ? `<span class="sdate">— ${esc(item.storyDate)}</span>` : ''}</div>`;
+    return div;
+}
 
-        async function fetchLinkPreview(url, container) {
-            container.innerHTML = '<div class="link-preview-loading">Loading preview...</div>';
-            try {
-                const res = await fetch(`https://api.microlink.io/?url=${encodeURIComponent(url)}`);
-                const data = await res.json();
-                const meta = data.data || {};
-                const title = meta.title || '';
-                const description = meta.description || '';
-                const image = meta.image && meta.image.url ? meta.image.url : '';
-                const siteName = meta.publisher || new URL(url).hostname;
+function linkListEl(links){
+    const box = document.createElement('div');
+    box.className = 'lnlist';
+    links.forEach(l => {
+        const row = document.createElement('div');
+        row.className = 'lnrow';
+        row.innerHTML = `<span class="perm">lrwxr-xr-x</span>` +
+            `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>` +
+            `<span class="arrow">-&gt;</span>` +
+            `<a class="url" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.url.replace(/^https?:\/\//,''))}</a>`;
+        box.appendChild(row);
+    });
+    return box;
+}
 
-                container.innerHTML = `
-                    <div class="link-preview-wrap">
-                        <a href="${url}" target="_blank" class="link-preview-card">
-                            ${image ? `<img src="${image}" alt="${title}" class="link-preview-img">` : ''}
-                            <div class="link-preview-body">
-                                <span class="link-preview-site">${siteName}</span>
-                                <p class="link-preview-title">${title}</p>
-                                ${description ? `<p class="link-preview-desc">${description}</p>` : ''}
-                            </div>
-                        </a>
-                    </div>
-                `;
-            } catch (e) {
-                container.innerHTML = `
-                    <div class="link-preview-wrap">
-                        <a href="${url}" target="_blank" class="link-preview-card link-preview-fallback">
-                            <div class="link-preview-body">
-                                <span class="link-preview-site">${new URL(url).hostname}</span>
-                                <p class="link-preview-title">${url}</p>
-                            </div>
-                        </a>
-                    </div>
-                `;
-            }
-        }
+// link preview card, rendered like curl output
+async function loadLinkPreview(el, token){
+    const url = el.dataset.url;
+    el.innerHTML = '<div class="lp-loading">fetching preview</div>';
+    const fallback = () => {
+        el.innerHTML = `<a class="lp-card" href="${esc(url)}" target="_blank" rel="noopener">
+            <div class="lp-body"><div class="lp-site">${esc(new URL(url).hostname)}</div>
+            <div class="lp-title">${esc(url)}</div></div></a>`;
+    };
+    try {
+        const res = await fetch('https://api.microlink.io/?url=' + encodeURIComponent(url));
+        const meta = (await res.json()).data || {};
+        if (token !== typeToken) return;
+        const img = meta.image && meta.image.url ? `<img src="${esc(meta.image.url)}" alt="">` : '';
+        if (!meta.title && !img) { fallback(); return; }
+        el.innerHTML = `<a class="lp-card" href="${esc(url)}" target="_blank" rel="noopener">${img}
+            <div class="lp-body">
+                <div class="lp-site">${esc(meta.publisher || new URL(url).hostname)}</div>
+                <div class="lp-title">${esc(meta.title || url)}</div>
+                ${meta.description ? `<div class="lp-desc">${esc(meta.description)}</div>` : ''}
+            </div></a>`;
+    } catch (e) { if (token === typeToken) fallback(); }
+}
 
-        function fetchBlogContent(url, container) {
-            fetchLinkPreview(url, container);
-        }
+function stepOutputEl(st, token){
+    const out = document.createElement('div');
+    out.className = 'vcontent';
+    if (st.venueLine){
+        const v = document.createElement('div');
+        v.className = 'venue-line';
+        v.innerHTML = st.venueLine;
+        out.appendChild(v);
+    }
+    if (st.story) out.appendChild(storyEl(st.story));
+    if (st.video){
+        const vid = document.createElement('video');
+        vid.src = st.video;
+        vid.loop = vid.muted = vid.playsInline = vid.controls = vid.autoplay = true;
+        out.appendChild(vid);
+    }
+    if (st.image){
+        const img = document.createElement('img');
+        img.className = st.thumb ? 'thumb' : 'media';
+        img.src = st.image;
+        img.alt = st.alt || '';
+        out.appendChild(img);
+    }
+    if (st.pdf){
+        const fr = document.createElement('iframe');
+        fr.className = 'pdf';
+        fr.src = st.pdf;
+        fr.title = st.alt || 'PDF';
+        out.appendChild(fr);
+    }
+    if (st.preview){
+        const pv = document.createElement('div');
+        pv.className = 'linkprev';
+        pv.dataset.url = st.preview;
+        out.appendChild(pv);
+        loadLinkPreview(pv, token);
+    }
+    if (st.links) out.appendChild(linkListEl(st.links));
+    return out;
+}
 
-        function closeModal() {
-            const modal = document.getElementById('paper-modal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-            document.getElementById('modal-body').innerHTML = '';
-        }
+function runStep(steps, idx, token){
+    if (token !== typeToken) return;
+    if (idx >= steps.length){ promptLine(true); return; }   // idle prompt at the end
+    const st = steps[idx];
+    const line = promptLine(true);
+    const typed = line.querySelector('.typed');
+    const cursor = line.querySelector('.cursor');
+    line.scrollIntoView({block:'nearest'});
+    const showOut = () => {
+        if (token !== typeToken) return;
+        cursor.remove();
+        const out = stepOutputEl(st, token);
+        vsteps.appendChild(out);
+        requestAnimationFrame(() => out.classList.add('on'));
+        setTimeout(() => runStep(steps, idx + 1, token), reduced ? 0 : 420);
+    };
+    if (reduced){ typed.textContent = st.cmd; showOut(); return; }
+    let i = 0;
+    (function type(){
+        if (token !== typeToken) return;
+        typed.textContent = st.cmd.slice(0, ++i);
+        if (i < st.cmd.length) setTimeout(type, 14);
+        else setTimeout(showOut, 170);
+    })();
+}
 
-        // Close modal on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
+function openView(id, row){
+    const v = VIEWS[id];
+    if (!v || !v.steps.length) return;
+    if (activeRow){ activeRow.classList.remove('active'); activeRow.setAttribute('aria-expanded','false'); }
+    activeRow = row;
+    row.classList.add('active');
+    row.setAttribute('aria-expanded','true');
 
-        // Close modal on backdrop click
-        document.getElementById('paper-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'paper-modal') closeModal();
-        });
+    term.classList.add('split');
+    w1.hidden = false; w1.classList.add('active');
+    w0.textContent = '0:main-'; w1.textContent = '1:viewer*';
+    ptitle.textContent = v.title;
+    vsteps.innerHTML = '';
+    document.getElementById('vbody').scrollTop = 0;
+    runStep(v.steps, 0, ++typeToken);
+}
 
-        // Load all data
-        async function loadData() {
-            try {
-                const [profile, about, experience, education, publications, footer] = await Promise.all([
-                    fetch('data/profile.json').then(r => r.json()),
-                    fetch('data/about.json').then(r => r.json()),
-                    fetch('data/experience.json').then(r => r.json()),
-                    fetch('data/education.json').then(r => r.json()),
-                    fetch('data/publications.json').then(r => r.json()),
-                    fetch('data/footer.json').then(r => r.json())
-                ]);
+function closeView(){
+    typeToken++;
+    term.classList.remove('split');
+    vsteps.innerHTML = '';
+    w1.hidden = true; w0.textContent = '0:main*';
+    if (activeRow){ activeRow.classList.remove('active'); activeRow.setAttribute('aria-expanded','false'); activeRow = null; }
+}
 
-                profileData = profile;
-                publicationsData = publications;
-                educationData = education;
+function bindRow(row){
+    row.addEventListener('click', e => {
+        if (e.target.closest('a')) return;   // let links work
+        if (activeRow === row){ closeView(); return; }
+        openView(row.dataset.view, row);
+    });
+    row.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); row.click(); }
+    });
+}
 
-                renderProfile(profile);
-                renderAbout(about);
-                renderExperience(experience);
-                renderEducation(education);
-                renderPublications(publications);
-                renderFooter(footer);
-            } catch (error) {
-                console.error('Error loading data:', error);
-            }
-        }
+document.getElementById('closepane').addEventListener('click', closeView);
+// modal mode: tapping the dimmed backdrop closes the pane
+document.getElementById('viewer').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeView();
+});
+document.addEventListener('keydown', e => {
+    if ((e.key === 'q' || e.key === 'Escape') && !e.target.closest('input,textarea')) closeView();
+});
 
-        function renderProfile(data) {
-            document.getElementById('profile-img').src = data.image;
-            document.getElementById('profile-img').alt = data.name;
-            document.getElementById('profile-name').textContent = data.name;
-            document.getElementById('profile-title').textContent = data.title;
+// ── step builders (from data/*.json) ─────────────
+function careerSteps(item, kind){
+    const prefix = kind === 'exp' ? 'career/' : 'education/';
+    const slug = prefix + slugify(item.organization);
+    const steps = [];
+    if (item.story) steps.push({cmd:`show ${slug} --story`, story:item});
+    if (item.media){
+        if (item.mediaType === 'video') steps.push({cmd:`mpv ${basename(item.media)} --loop`, video:item.media});
+        else steps.push({cmd:`imgcat ${basename(item.media)}`, image:item.media, alt:item.title});
+    }
+    if (item.link && kind === 'exp') steps.push({cmd:`curl -sL ${shortUrl(item.link)} --preview`, preview:item.link});
+    if (item.link) steps.push({cmd:'ls -l links/', links:[{label: kind === 'exp' ? 'news' : 'website', url:item.link}]});
+    if (steps.length) steps[0].venueLine = `<b>${esc(slug)}</b> · ${esc(item.date)}`;
+    return {title: slug, steps};
+}
 
-            const socialLinks = document.getElementById('social-links');
-            let socialHTML = '';
-            if (data.social.linkedin) socialHTML += `<a href="${data.social.linkedin}" target="_blank" title="LinkedIn">${icons.linkedin}</a>`;
-            if (data.social.github) socialHTML += `<a href="${data.social.github}" target="_blank" title="GitHub">${icons.github}</a>`;
-            if (data.social.scholar) socialHTML += `<a href="${data.social.scholar}" target="_blank" title="Google Scholar">${icons.scholar}</a>`;
-            if (data.email) socialHTML += `<a href="mailto:${data.email}" title="Email">${icons.email}</a>`;
-            socialLinks.innerHTML = socialHTML;
-        }
+function pubSteps(pub){
+    const slug = pub.image ? basename(pub.image).replace(/\.\w+$/,'') : slugify(pub.venue + '-' + pub.title.slice(0,24));
+    const steps = [];
+    if (pub.story && pub.story.trim()) steps.push({cmd:`open publications/${slug} --story`, story:pub});
+    if (pub.pdf) steps.push({cmd:`open ${slug}.pdf`, pdf:pub.pdf, alt:pub.title});
+    else if (pub.image) steps.push({cmd:`imgcat ${basename(pub.image)}`, image:pub.image, alt:pub.title, thumb:true});
+    let links = (pub.links || []).slice();
+    if (!links.length && pub.pdf) links = [{label:'pdf', url:pub.pdf}];
+    if (!links.length && pub.blogUrl) links = [{label:'blog', url:pub.blogUrl}];
+    if (links.length) steps.push({cmd:'ls -l links/', links});
+    if (steps.length) steps[0].venueLine = `<b>${esc(pub.venue)}</b> · ${pub.authors}`;
+    return {title: pub.pdf ? slug + '.pdf' : slug, steps};
+}
 
-        function renderAbout(data) {
-            document.getElementById('about-text').textContent = data.text;
-        }
+// ── renderers ────────────────────────────────────
+function renderProfile(data){
+    document.getElementById('profile-img').src = data.image;
+    document.getElementById('profile-img').alt = data.name;
+    document.getElementById('profile-imgcap').textContent = 'imgcat ' + basename(data.image);
+    document.getElementById('profile-name').textContent = data.name;
 
-        function openExperienceModal(index) {
-            const exp = experienceData[index];
-            document.getElementById('modal-title').textContent = exp.title;
-            document.getElementById('modal-venue').textContent = exp.date;
-            document.getElementById('modal-authors').textContent = exp.organization;
-            document.getElementById('modal-links').innerHTML = exp.link
-                ? `<a href="${exp.link}" target="_blank" onclick="event.stopPropagation()">[News]</a>`
-                : '';
+    document.getElementById('profile-title').textContent = data.title;
 
-            const storyEl = document.getElementById('modal-story');
-            if (exp.story) {
-                storyEl.innerHTML = `
-                    <div class="story-message">
-                        <img src="${profileData.image}" alt="${profileData.name}" class="story-avatar">
-                        <div class="story-bubble">
-                            <p>${exp.story}</p>
-                            ${exp.storyDate ? `<span class="story-date">${exp.storyDate}</span>` : ''}
-                        </div>
-                    </div>
-                `;
-                storyEl.style.display = 'flex';
-            } else {
-                storyEl.style.display = 'none';
-            }
+    document.getElementById('profile-tags').innerHTML =
+        (data.tags || []).map(t => `<em>${esc(t)}</em>`).join('');
 
-            const bodyEl = document.getElementById('modal-body');
-            bodyEl.style.display = 'block';
-            fetchLinkPreview(exp.link, bodyEl);
+    // ping section
+    const ping = [];
+    if (data.email) ping.push({label:data.email, url:'mailto:' + data.email});
+    if (data.social.github) ping.push({label:data.social.github.replace(/^https?:\/\/(www\.)?/,''), url:data.social.github});
+    if (data.social.scholar) ping.push({label:'scholar.google.com/…' + (data.social.scholar.match(/user=([\w-]{7})/) || [,''])[1], url:data.social.scholar});
+    if (data.social.linkedin) ping.push({label:data.social.linkedin.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''), url:data.social.linkedin});
+    document.getElementById('ping-list').innerHTML = ping.map((p, i) =>
+        `<li>64 bytes from <a href="${esc(p.url)}"${p.url.startsWith('mailto') ? '' : ' target="_blank" rel="noopener"'}>${esc(p.label)}</a>
+         <span class="lat">icmp_seq=${i} ttl=64 time=${(0.3 + i * 0.9).toFixed(1)} ms</span></li>`).join('');
+}
 
-            document.getElementById('paper-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+function renderAbout(data){
+    let html = esc(data.text);
+    (data.highlights || []).forEach(h => {
+        html = html.split(esc(h)).join(`<span class="hl">${esc(h)}</span>`);
+    });
+    document.getElementById('about-text').innerHTML = html;
+}
 
-        function renderExperience(data) {
-            experienceData = data;
-            const list = document.getElementById('experience-list');
-            list.innerHTML = data.map((exp, index) => {
-                const hasDetail = exp.story || exp.link;
-                const orgHTML = exp.link
-                    ? `<a href="${exp.link}" target="_blank" class="organization-link" onclick="event.stopPropagation()">${exp.organization}</a>`
-                    : exp.organization;
-                const expandIcon = hasDetail
-                    ? `<span class="expand-icon">${icons.expand}</span>`
-                    : '';
-                return `
-                    <div class="timeline-item ${hasDetail ? 'clickable' : ''}" ${hasDetail ? `onclick="openExperienceModal(${index})"` : ''}>
-                        <div class="timeline-date">${exp.date}</div>
-                        <div class="timeline-content">
-                            <h3>${exp.title}${expandIcon}</h3>
-                            <p class="organization">${orgHTML}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
+function renderCareer(experience, education){
+    const items = experience.map(e => ({...e, kind:'exp'}))
+        .concat(education.map(e => ({...e, kind:'edu'})));
+    const list = document.getElementById('career-list');
+    list.innerHTML = items.map((item, i) => {
+        const id = 'career-' + i;
+        VIEWS[id] = careerSteps(item, item.kind);
+        const clickable = VIEWS[id].steps.length > 0;
+        const hints = [];
+        if (item.story) hints.push('story');
+        if (item.media) hints.push(item.mediaType === 'video' ? 'video' : 'photo');
+        if (item.link && !item.media && !item.story) hints.push('link');
+        const head = i === 0 && /present/i.test(item.date) ? '<span class="head">(HEAD → now)</span>' : '';
+        return `<li>
+            <div class="row ${clickable ? 'clickable' : ''}" ${clickable ? `role="button" tabindex="0" data-view="${id}" aria-expanded="false"` : ''}>
+                <span class="node">*</span><span class="hash">${fakeHash(item.title + item.organization)}</span>${head}
+                <span class="msg">${esc(item.title)} · ${esc(item.organization)}</span>
+                ${clickable ? `<span class="expand-hint">[→ ${hints.join(' · ')}]</span>` : ''}
+                <span class="meta">${esc(item.date)}</span>
+            </div>
+        </li>` + (i < items.length - 1 ? '<li><span class="edge">|</span></li>' : '');
+    }).join('');
+    list.querySelectorAll('.row.clickable').forEach(bindRow);
+}
 
-        function openEducationModal(index) {
-            const edu = educationData[index];
-            document.getElementById('modal-title').textContent = edu.title;
-            document.getElementById('modal-venue').textContent = edu.date;
-            document.getElementById('modal-authors').textContent = edu.organization;
-            document.getElementById('modal-links').innerHTML = edu.link
-                ? `<a href="${edu.link}" target="_blank" onclick="event.stopPropagation()">[Website]</a>`
-                : '';
+function renderPublications(pubs){
+    document.getElementById('pub-total').textContent = 'total ' + pubs.length;
+    const list = document.getElementById('publication-list');
+    list.innerHTML = pubs.map((pub, i) => {
+        const id = 'pub-' + i;
+        VIEWS[id] = pubSteps(pub);
+        const clickable = VIEWS[id].steps.length > 0;
+        const year = yearOf(pub.venue);
+        const venueShort = pub.venue.replace(/\s*20\d\d\s*/,' ').trim();
+        const tag = firstAuthorTag(pub.authors);
+        return `<li>
+            <div class="row ${clickable ? 'clickable' : ''}" ${clickable ? `role="button" tabindex="0" data-view="${id}" aria-expanded="false"` : ''}>
+                <span class="yr">${year}</span><span class="venue">${esc(venueShort)}</span>
+                <span>${esc(pub.title)}${tag ? `<span class="first">${tag}</span>` : ''}</span>
+                ${clickable ? '<span class="expand-hint">[→]</span>' : ''}
+            </div>
+        </li>`;
+    }).join('');
+    list.querySelectorAll('.row.clickable').forEach(bindRow);
+}
 
-            const storyEl = document.getElementById('modal-story');
-            if (edu.story) {
-                storyEl.innerHTML = `
-                    <div class="story-message">
-                        <img src="${profileData.image}" alt="${profileData.name}" class="story-avatar">
-                        <div class="story-bubble">
-                            <p>${edu.story}</p>
-                            ${edu.storyDate ? `<span class="story-date">${edu.storyDate}</span>` : ''}
-                        </div>
-                    </div>
-                `;
-                storyEl.style.display = 'flex';
-            } else {
-                storyEl.style.display = 'none';
-            }
+function renderFooter(data){
+    document.getElementById('footer-copy').textContent = `© ${data.year} ${data.name} · exit code 0`;
+    const clock = () => {
+        const now = new Date();
+        const t = now.toTimeString().slice(0,5);
+        const d = now.toDateString().slice(4,10);
+        document.getElementById('tmux-right').textContent = `"dongmin@lgai" ${t} ${d} ${now.getFullYear()}`;
+    };
+    clock();
+    setInterval(clock, 30000);
+}
 
-            const bodyEl = document.getElementById('modal-body');
-            if (edu.media) {
-                if (edu.mediaType === 'video') {
-                    bodyEl.innerHTML = `<video src="${edu.media}" class="edu-media" autoplay loop muted playsinline></video>`;
-                } else {
-                    bodyEl.innerHTML = `<img src="${edu.media}" alt="${edu.title}" class="edu-media">`;
-                }
-                bodyEl.style.display = 'block';
-            } else {
-                bodyEl.innerHTML = '';
-                bodyEl.style.display = 'none';
-            }
+// ── boot ─────────────────────────────────────────
+async function loadData(){
+    try {
+        const [profile, about, experience, education, publications, footer] = await Promise.all([
+            fetch('data/profile.json').then(r => r.json()),
+            fetch('data/about.json').then(r => r.json()),
+            fetch('data/experience.json').then(r => r.json()),
+            fetch('data/education.json').then(r => r.json()),
+            fetch('data/publications.json').then(r => r.json()),
+            fetch('data/footer.json').then(r => r.json())
+        ]);
+        profileData = profile;
+        renderProfile(profile);
+        renderAbout(about);
+        renderCareer(experience, education);
+        renderPublications(publications);
+        renderFooter(footer);
 
-            document.getElementById('paper-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function renderEducation(data) {
-            educationData = data;
-            const list = document.getElementById('education-list');
-            list.innerHTML = data.map((edu, index) => {
-                const hasDetail = edu.story || edu.media;
-                const orgHTML = edu.link
-                    ? `<a href="${edu.link}" target="_blank" class="organization-link" onclick="event.stopPropagation()">${edu.organization}</a>`
-                    : edu.organization;
-                const expandIcon = hasDetail
-                    ? `<span class="expand-icon">${icons.expand}</span>`
-                    : '';
-                return `
-                    <div class="timeline-item ${hasDetail ? 'clickable' : ''}" ${hasDetail ? `onclick="openEducationModal(${index})"` : ''}>
-                        <div class="timeline-date">${edu.date}</div>
-                        <div class="timeline-content">
-                            <h3>${edu.title}${expandIcon}</h3>
-                            <p class="organization">${orgHTML}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function renderPublications(data) {
-            const list = document.getElementById('publication-list');
-            list.innerHTML = data.map((pub, index) => {
-                const imageHTML = pub.image ? `<img src="${pub.image}" alt="${pub.title}" class="pub-image">` : '';
-                const linksHTML = pub.links.length > 0
-                    ? `<div class="pub-links">${pub.links.map(link =>
-                        `<a href="${link.url}" target="_blank" onclick="event.stopPropagation()">[${link.label}]</a>`
-                      ).join('')}</div>`
-                    : '';
-
-                const hasDetail = pub.pdf || pub.blogUrl || (pub.story && pub.story.trim() !== '');
-                const expandIcon = hasDetail ? `<span class="expand-icon" title="Click to view details">${icons.expand}</span>` : '';
-
-                return `
-                    <li class="publication-item ${hasDetail ? 'clickable' : ''}" ${hasDetail ? `onclick="openModal(${index})"` : ''}>
-                        ${imageHTML}
-                        <div class="pub-content">
-                            <span class="pub-title">${pub.title}${expandIcon}</span>
-                            <span class="pub-venue">${pub.venue}</span>
-                            <span class="pub-authors">${pub.authors}</span>
-                            ${linksHTML}
-                        </div>
-                    </li>
-                `;
-            }).join('');
-        }
-
-        function renderFooter(data) {
-            document.getElementById('footer').innerHTML = `<p>&copy; ${data.year} ${data.name}. All rights reserved.</p>`;
-        }
-
-        // Initialize
-        loadData();
-    </script>
+        const blocks = [...document.querySelectorAll('.block')];
+        if (reduced) blocks.forEach(b => b.classList.add('on'));
+        else blocks.forEach((b, i) => setTimeout(() => b.classList.add('on'), 180 + i * 200));
+    } catch (error) {
+        console.error('Error loading data:', error);
+        document.querySelectorAll('.block').forEach(b => b.classList.add('on'));
+    }
+}
+loadData();
+</script>
 </body>
 </html>
