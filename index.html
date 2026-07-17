@@ -210,6 +210,17 @@ function stepOutputEl(st, token){
         fr.className = 'pdf';
         fr.src = st.pdf;
         fr.title = st.alt || 'PDF';
+        fr.allowFullscreen = true;
+        const bar = document.createElement('div');
+        bar.className = 'pdfbar';
+        bar.innerHTML = `<button type="button" class="fsbtn">⛶ fullscreen</button>` +
+            `<a href="${esc(st.pdf)}" target="_blank" rel="noopener">open in new tab ↗</a>`;
+        bar.querySelector('.fsbtn').addEventListener('click', () => {
+            if (fr.requestFullscreen) fr.requestFullscreen();
+            else if (fr.webkitRequestFullscreen) fr.webkitRequestFullscreen();
+            else window.open(st.pdf, '_blank', 'noopener');
+        });
+        out.appendChild(bar);
         out.appendChild(fr);
     }
     if (st.preview){
@@ -315,6 +326,7 @@ function pubSteps(pub){
     const steps = [];
     if (pub.story && pub.story.trim()) steps.push({cmd:`open publications/${slug} --story`, story:pub});
     if (pub.pdf) steps.push({cmd:`open ${slug}.pdf`, pdf:pub.pdf, alt:pub.title});
+    else if (pub.blogUrl) steps.push({cmd:`curl -sL ${shortUrl(pub.blogUrl)} --preview`, preview:pub.blogUrl});
     else if (pub.image) steps.push({cmd:`imgcat ${basename(pub.image)}`, image:pub.image, alt:pub.title, thumb:true});
     let links = (pub.links || []).slice();
     if (!links.length && pub.pdf) links = [{label:'pdf', url:pub.pdf}];

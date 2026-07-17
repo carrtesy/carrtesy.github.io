@@ -115,7 +115,8 @@ under `prefers-reduced-motion`.
 - **Viewer pane** (split / modal): click a career commit or publication → typed-command
   sequence renders story bubble, media (video/photo), embedded arXiv PDF, and links
 - **Command mapping**: story → `show <slug> --story`; video → `mpv <file> --loop`;
-  image → `imgcat <file>`; PDF → `open <slug>.pdf`; experience link → `curl … --preview`
+  image → `imgcat <file>`; PDF → `open <slug>.pdf` (with ⛶ fullscreen + open-in-new-tab
+  toolbar); experience link or publication `blogUrl` (when no PDF) → `curl … --preview`
   (microlink.io preview card, for X-Frame-Options-blocked pages); links → `ls -l links/`
   (symlink-style list from `links[]`, falling back to `pdf`/`blogUrl` when `links` is empty)
 - **First-author badge**: derived from `authors` markup — `<strong>` first → `1st author`,
