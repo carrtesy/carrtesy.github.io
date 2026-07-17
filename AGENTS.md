@@ -30,7 +30,6 @@ under `prefers-reduced-motion`.
 ├── index.html              # Main page — terminal UI, renders all sections from JSON
 ├── style.css               # All styles (terminal theme, split pane / modal viewer)
 ├── AGENTS.md               # This file
-├── mockups/                # Design mockups (untracked drafts; A = shipped concept)
 ├── data/
 │   ├── profile.json        # Name, title, email, social links, profile image
 │   ├── about.json          # About Me text
