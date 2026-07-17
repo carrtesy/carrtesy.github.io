@@ -22,23 +22,12 @@
             <section class="block">
                 <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">whoami --verbose</span></div>
                 <div class="out id">
-                    <figure>
-                        <img id="profile-img" src="" alt="">
-                        <figcaption class="imgcap" id="profile-imgcap"></figcaption>
-                    </figure>
+                    <img id="profile-img" src="" alt="">
                     <div>
                         <div class="name" id="profile-name"></div>
                         <div class="role" id="profile-title"></div>
-                        <div class="tags" id="profile-tags"></div>
+                        <p class="bio" id="about-text"></p>
                     </div>
-                </div>
-            </section>
-
-            <section class="block">
-                <div class="prompt"><b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd">cat about.md</span></div>
-                <div class="out about">
-                    <span class="comment"># About</span><br>
-                    <span id="about-text"></span>
                 </div>
             </section>
 
@@ -339,13 +328,8 @@ function pubSteps(pub){
 function renderProfile(data){
     document.getElementById('profile-img').src = data.image;
     document.getElementById('profile-img').alt = data.name;
-    document.getElementById('profile-imgcap').textContent = 'imgcat ' + basename(data.image);
     document.getElementById('profile-name').textContent = data.name;
-
     document.getElementById('profile-title').textContent = data.title;
-
-    document.getElementById('profile-tags').innerHTML =
-        (data.tags || []).map(t => `<em>${esc(t)}</em>`).join('');
 
     // ping section
     const ping = [];

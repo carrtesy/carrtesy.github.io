@@ -14,8 +14,9 @@ Live URL: **https://carrtesy.github.io/**
 ## Design
 
 Terminal (tmux) concept, amber-phosphor palette. The whole page is one terminal window:
-sections render as shell commands (`whoami --verbose`, `cat about.md`,
-`git log --career --graph`, `ls publications/`, `ping dongmin`). Clicking a career
+sections render as shell commands (`whoami --verbose` — photo, name, title, and the
+About text from `data/about.json` — `git log --career --graph`, `ls publications/`,
+`ping dongmin`). Clicking a career
 commit or publication opens a **viewer pane** — a tmux-style vertical split on wide
 screens, a floating terminal-window modal on narrow/portrait screens. The viewer
 replays a sequence of typed commands (`show … --story`, `mpv video`, `imgcat photo`,
@@ -107,7 +108,6 @@ under `prefers-reduced-motion`.
 
 ## Schema Additions (terminal UI)
 
-- `data/profile.json` → optional `"tags": ["time-series", …]` — chips under the name in `whoami` output
 - `data/about.json` → optional `"highlights": ["anomaly detection", …]` — substrings of `text` rendered in amber
 
 ## Features

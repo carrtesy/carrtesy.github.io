@@ -118,12 +118,8 @@ a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .id img{width:120px;height:120px;object-fit:cover;border-radius:4px;border:1px solid var(--line);filter:sepia(.25) contrast(1.02)}
 .id .name{font-size:clamp(24px,3.5vw,32px);color:var(--amber);line-height:1.2}
 .id .role{margin-top:4px}
-.id .tags{color:var(--dim);margin-top:10px;font-size:13px}
-.id .tags em{font-style:normal;color:var(--ink);background:rgba(255,180,84,.08);border:1px solid var(--line);border-radius:3px;padding:1px 7px;margin-right:6px;display:inline-block;margin-bottom:6px}
-.imgcap{color:var(--faint);font-size:11px;margin-top:6px;text-align:center}
-
-.about{max-width:64ch}
-.about .hl{color:var(--amber)}
+.id .bio{max-width:60ch;margin-top:12px;font-size:13px;line-height:1.8;color:var(--ink)}
+.hl{color:var(--amber)}
 
 /* clickable rows */
 .row{padding:6px 10px;margin:0 -10px;border-radius:5px;display:block}
