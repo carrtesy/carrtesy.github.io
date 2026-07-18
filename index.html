@@ -435,7 +435,7 @@ function renderFooter(data){
     // visitor count from GoatCounter's public counter endpoint (silently skipped on failure)
     const gc = document.querySelector('script[data-goatcounter]');
     if (gc){
-        fetch(gc.dataset.goatcounter.replace(/\/count$/, '/counter/TOTAL.json'))
+        fetch(gc.dataset.goatcounter.replace(/\/count$/, '/counter//.json'))
             .then(r => r.ok ? r.json() : null)
             .then(d => {
                 if (!d || !d.count) return;
