@@ -431,6 +431,19 @@ function renderPublications(pubs){
 
 function renderFooter(data){
     document.getElementById('footer-copy').textContent = `© ${data.year} ${data.name} · exit code 0`;
+
+    // visitor count from GoatCounter's public counter endpoint (silently skipped on failure)
+    const gc = document.querySelector('script[data-goatcounter]');
+    if (gc){
+        fetch(gc.dataset.goatcounter.replace(/\/count$/, '/counter/TOTAL.json'))
+            .then(r => r.ok ? r.json() : null)
+            .then(d => {
+                if (!d || !d.count) return;
+                const n = String(d.count).replace(/\s/g, ',');
+                document.getElementById('footer-copy').textContent += ` · ~${n} visitors`;
+            })
+            .catch(() => {});
+    }
     const clock = () => {
         const now = new Date();
         const t = now.toTimeString().slice(0,5);
