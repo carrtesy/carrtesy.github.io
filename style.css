@@ -40,6 +40,7 @@ body{
   padding:11px 16px;border-bottom:1px solid var(--line);
   background:rgba(255,180,84,.02);
 }
+.dots{display:flex;gap:6px}
 .dot{width:12px;height:12px;border-radius:50%}
 .dot.r{background:#5f4038}.dot.y{background:#5c4d2c}.dot.g{background:#3d5236}
 .titlebar #termtitle{flex:1;text-align:center;color:var(--faint);font-size:12px;letter-spacing:.06em}
