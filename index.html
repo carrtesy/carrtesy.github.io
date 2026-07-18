@@ -440,7 +440,7 @@ function renderFooter(data){
             .then(d => {
                 if (!d || !d.count) return;
                 const n = String(d.count).replace(/\s/g, ',');
-                document.getElementById('footer-copy').textContent += ` · ~${n} visitors`;
+                document.getElementById('footer-copy').textContent += ` · ${n} visitors till now`;
             })
             .catch(() => {});
     }
