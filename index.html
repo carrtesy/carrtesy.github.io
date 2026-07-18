@@ -10,9 +10,10 @@
 <body>
 
 <div class="term" id="term">
-    <div class="titlebar" aria-hidden="true">
-        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span id="termtitle">dongmin@lgai — tmux — 132×40</span>
+    <div class="titlebar">
+        <span class="dot r" aria-hidden="true"></span><span class="dot y" aria-hidden="true"></span><span class="dot g" aria-hidden="true"></span>
+        <span id="termtitle" aria-hidden="true">dongmin@lgai — tmux — 132×40</span>
+        <button id="themetoggle" title="toggle light/dark terminal"></button>
     </div>
 
     <div class="panes">
@@ -61,7 +62,7 @@
                     <span class="mdots" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></span>
                     <span class="panelabel">┌─ pane 1</span>
                     <span class="ptitle" id="ptitle">viewer</span>
-                    <button id="closepane" title="close pane (q)">✕ q</button>
+                    <button id="closepane" title="close pane (q)">✕</button>
                 </div>
                 <div class="vbody" id="vbody">
                     <div id="vsteps"></div>
@@ -85,6 +86,19 @@
 
 <script>
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ── theme toggle ─────────────────────────────────
+const themeBtn = document.getElementById('themetoggle');
+function setTheme(t){
+    document.documentElement.dataset.theme = t;
+    try { localStorage.setItem('theme', t); } catch (e) {}
+    themeBtn.textContent = t === 'dark' ? '☀ light' : '☾ dark';
+}
+let savedTheme = 'dark';
+try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+setTheme(savedTheme);
+themeBtn.addEventListener('click', () =>
+    setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
 
 // ── small utilities ──────────────────────────────
 function esc(s){
@@ -316,7 +330,7 @@ function careerSteps(item, kind){
         else steps.push({cmd:`imgcat ${basename(item.media)}`, image:item.media, alt:item.title});
     }
     if (item.link && kind === 'exp') steps.push({cmd:`curl -sL ${shortUrl(item.link)} --preview`, preview:item.link});
-    if (item.link) steps.push({cmd:'ls -l links/', links:[{label: kind === 'exp' ? 'news' : 'website', url:item.link}]});
+    if (item.link) steps.push({cmd:`ls -l ${slugify(item.organization)}/links/`, links:[{label: kind === 'exp' ? 'news' : 'website', url:item.link}]});
     if (steps.length) steps[0].venueLine = `<b>${esc(slug)}</b> · ${esc(item.date)}`;
     return {title: slug, steps};
 }
@@ -331,7 +345,8 @@ function pubSteps(pub){
     let links = (pub.links || []).slice();
     if (!links.length && pub.pdf) links = [{label:'pdf', url:pub.pdf}];
     if (!links.length && pub.blogUrl) links = [{label:'blog', url:pub.blogUrl}];
-    if (links.length) steps.push({cmd:'ls -l links/', links});
+    const topic = (slug.includes('_') ? slug.split('_').pop() : slug).toLowerCase();
+    if (links.length) steps.push({cmd:`ls -l ${topic}/links/`, links});
     if (steps.length) steps[0].venueLine = `<b>${esc(pub.venue)}</b> · ${pub.authors}`;
     return {title: pub.pdf ? slug + '.pdf' : slug, steps};
 }
@@ -344,13 +359,14 @@ function renderProfile(data){
     document.getElementById('profile-title').textContent = data.title;
 
     // ping section
+    const nick = (data.nickname || data.name.split(' ')[0]).toLowerCase();
     const ping = [];
-    if (data.email) ping.push({label:data.email, url:'mailto:' + data.email});
-    if (data.social.github) ping.push({label:data.social.github.replace(/^https?:\/\/(www\.)?/,''), url:data.social.github});
-    if (data.social.scholar) ping.push({label:'scholar.google.com/…' + (data.social.scholar.match(/user=([\w-]{7})/) || [,''])[1], url:data.social.scholar});
-    if (data.social.linkedin) ping.push({label:data.social.linkedin.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''), url:data.social.linkedin});
+    if (data.email) ping.push({who:`${nick}'s email`, label:data.email, url:'mailto:' + data.email});
+    if (data.social.github) ping.push({who:`${nick}'s github`, label:data.social.github.replace(/^https?:\/\/(www\.)?/,''), url:data.social.github});
+    if (data.social.scholar) ping.push({who:`${nick}'s google scholar`, label:'scholar.google.com/…' + (data.social.scholar.match(/user=([\w-]{7})/) || [,''])[1], url:data.social.scholar});
+    if (data.social.linkedin) ping.push({who:`${nick}'s linkedin`, label:data.social.linkedin.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''), url:data.social.linkedin});
     document.getElementById('ping-list').innerHTML = ping.map((p, i) =>
-        `<li>64 bytes from <a href="${esc(p.url)}"${p.url.startsWith('mailto') ? '' : ' target="_blank" rel="noopener"'}>${esc(p.label)}</a>
+        `<li>64 bytes from <span class="who">${esc(p.who)}</span>: <a href="${esc(p.url)}"${p.url.startsWith('mailto') ? '' : ' target="_blank" rel="noopener"'}>${esc(p.label)}</a>
          <span class="lat">icmp_seq=${i} ttl=64 time=${(0.3 + i * 0.9).toFixed(1)} ms</span></li>`).join('');
 }
 
@@ -375,9 +391,12 @@ function renderCareer(experience, education){
         if (item.media) hints.push(item.mediaType === 'video' ? 'video' : 'photo');
         if (item.link && !item.media && !item.story) hints.push('link');
         const head = i === 0 && /present/i.test(item.date) ? '<span class="head">(HEAD → now)</span>' : '';
+        const marker = item.logo
+            ? `<img class="orglogo" src="${esc(item.logo)}" alt="${esc(item.organization)} logo">`
+            : '<span class="node">*</span>';
         return `<li>
             <div class="row ${clickable ? 'clickable' : ''}" ${clickable ? `role="button" tabindex="0" data-view="${id}" aria-expanded="false"` : ''}>
-                <span class="node">*</span><span class="hash">${fakeHash(item.title + item.organization)}</span>${head}
+                ${marker}<span class="hash">${fakeHash(item.title + item.organization)}</span>${head}
                 <span class="msg">${esc(item.title)} · ${esc(item.organization)}</span>
                 ${clickable ? `<span class="expand-hint">[→ ${hints.join(' · ')}]</span>` : ''}
                 <span class="meta">${esc(item.date)}</span>

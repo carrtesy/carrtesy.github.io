@@ -109,6 +109,8 @@ under `prefers-reduced-motion`.
 ## Schema Additions (terminal UI)
 
 - `data/about.json` → optional `"highlights": ["anomaly detection", …]` — substrings of `text` rendered in amber
+- `data/profile.json` → optional `"nickname": "tommy"` — used in `ping` output labels (`tommy's email: …`); falls back to first name
+- `data/experience.json` / `data/education.json` → optional `"logo": "assets/img/logos/…png"` — shown at the far left of the `git log --career` row (falls back to a `*` commit node)
 
 ## Features
 
@@ -117,8 +119,11 @@ under `prefers-reduced-motion`.
 - **Command mapping**: story → `show <slug> --story`; video → `mpv <file> --loop`;
   image → `imgcat <file>`; PDF → `open <slug>.pdf` (with ⛶ fullscreen + open-in-new-tab
   toolbar); experience link or publication `blogUrl` (when no PDF) → `curl … --preview`
-  (microlink.io preview card, for X-Frame-Options-blocked pages); links → `ls -l links/`
-  (symlink-style list from `links[]`, falling back to `pdf`/`blogUrl` when `links` is empty)
+  (microlink.io preview card, for X-Frame-Options-blocked pages); links → `ls -l <topic>/links/`
+  (e.g. `ls -l aegis/links/` — symlink-style list from `links[]`, falling back to
+  `pdf`/`blogUrl` when `links` is empty)
+- **Theme toggle**: button in the terminal titlebar switches dark ↔ light terminal
+  palettes (`data-theme` on `<html>`, persisted in localStorage; dark is default)
 - **First-author badge**: derived from `authors` markup — `<strong>` first → `1st author`,
   `<strong>…*</strong>` → `co-1st`
 - **Fake commit hashes**: deterministic hash of title+organization; first career entry

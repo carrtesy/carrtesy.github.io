@@ -9,6 +9,7 @@
     "story": "My first work at LG AI Research, and an attempt to put together what I think a real anomaly detection system should look like. \"Normal\" is an inherently fuzzy concept — so the system has to be built alongside domain experts, incorporating their feedback as it goes. And to make that possible, the system needs to continuously surface insights from the data and surrounding context, giving experts something meaningful to react to.",
     "storyDate": "Feb 28, 2026",
     "links": [
+      { "label": "Paper", "url": "https://ojs.aaai.org/index.php/AAAI/article/view/42359" },
       { "label": "Blog", "url": "https://www.lgresearch.ai/blog/view?seq=633" }
     ]
   },

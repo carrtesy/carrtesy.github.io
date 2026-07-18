@@ -1,10 +1,22 @@
 /* ── Terminal theme tokens ─────────────────────── */
 :root{
-  --bg:#080604; --term:#0E0B07; --line:#2B2418;
+  --bg:#080604; --term:#0E0B07; --term2:#0B0906; --line:#2B2418;
   --ink:#E6D8BE; --dim:#8D7D61; --faint:#5C513E;
   --amber:#FFB454; --amber-deep:#C98A3A;
   --ok:#8BD672; --err:#F2594B;
+  --backdrop:rgba(8,6,4,.72);
+  --glow:rgba(255,180,84,.05);
+  --shadow:0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,180,84,.03);
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+:root[data-theme="light"]{
+  --bg:#E9E4D6; --term:#FAF7EE; --term2:#F3EFE2; --line:#D8CFB8;
+  --ink:#3D3425; --dim:#847456; --faint:#AC9F82;
+  --amber:#B4690E; --amber-deep:#95560C;
+  --ok:#3F7D2C; --err:#C34232;
+  --backdrop:rgba(120,108,84,.45);
+  --glow:rgba(180,105,14,.06);
+  --shadow:0 20px 50px rgba(90,75,45,.28), 0 0 0 1px rgba(180,105,14,.04);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -12,15 +24,16 @@ body{
   background:var(--bg); color:var(--ink);
   font-family:var(--mono); font-size:14px; line-height:1.75;
   padding:28px 16px 24px;
-  background-image:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,180,84,.05), transparent);
+  background-image:radial-gradient(ellipse 80% 60% at 50% -10%, var(--glow), transparent);
   height:100vh;height:100dvh;display:flex;flex-direction:column;
 }
 .term{
   max-width:1240px;width:100%;margin:0 auto;background:var(--term);
   border:1px solid var(--line);border-radius:10px;
-  box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,180,84,.03);
+  box-shadow:var(--shadow);
   overflow:hidden;
   flex:1;min-height:0;display:flex;flex-direction:column;
+  transition:background .25s,border-color .25s;
 }
 .titlebar{
   display:flex;align-items:center;gap:8px;flex:none;
@@ -29,7 +42,13 @@ body{
 }
 .dot{width:12px;height:12px;border-radius:50%}
 .dot.r{background:#5f4038}.dot.y{background:#5c4d2c}.dot.g{background:#3d5236}
-.titlebar span{margin:0 auto;color:var(--faint);font-size:12px;letter-spacing:.06em}
+.titlebar #termtitle{flex:1;text-align:center;color:var(--faint);font-size:12px;letter-spacing:.06em}
+#themetoggle{
+  background:none;border:1px solid var(--line);border-radius:4px;cursor:pointer;
+  color:var(--dim);font-family:var(--mono);font-size:11px;padding:2px 10px;white-space:nowrap;
+}
+#themetoggle:hover{color:var(--amber);border-color:var(--amber-deep)}
+#themetoggle:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 
 /* ── panes ─────────────────────────────────────── */
 .panes{flex:1;min-height:0;display:flex;position:relative}
@@ -40,7 +59,7 @@ body{
 }
 .viewer{
   flex:0 0 44%;min-width:0;border-left:1px solid var(--line);
-  display:none;background:#0B0906;
+  display:none;background:var(--term2);
 }
 .term.split .viewer{display:flex}
 .viewer-win{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column}
@@ -71,15 +90,15 @@ body{
 @media (max-width:880px), (orientation:portrait) and (max-width:1080px){
   .viewer{
     position:fixed;inset:0;z-index:50;border-left:none;flex-basis:auto;
-    background:rgba(8,6,4,.72);
+    background:var(--backdrop);
     -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
     align-items:center;justify-content:center;
     padding:18px 12px;
   }
   .viewer-win{
     flex:0 1 auto;width:min(600px,100%);max-height:88vh;max-height:88dvh;
-    background:#0B0906;border:1px solid var(--line);border-radius:10px;
-    box-shadow:0 30px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,180,84,.04);
+    background:var(--term2);border:1px solid var(--line);border-radius:10px;
+    box-shadow:var(--shadow);
     overflow:hidden;
   }
   .viewer-titlebar .mdots{display:flex}
@@ -138,6 +157,12 @@ a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .glog .meta{color:var(--dim);font-size:13px;display:block;padding-left:26px}
 .glog .msg{color:var(--ink)}
 .glog .org-link{color:inherit}
+.orglogo{
+  width:20px;height:20px;border-radius:4px;object-fit:contain;
+  background:#fff;border:1px solid var(--line);
+  vertical-align:-5px;margin-right:10px;
+}
+.glog .edge{padding-left:10px}
 
 .pubs{list-style:none;font-size:13.5px}
 .pubs li{border-bottom:1px solid rgba(43,36,24,.55)}
@@ -151,6 +176,7 @@ a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 
 .ping{list-style:none}
 .ping li{padding:2px 0}
+.ping .who{color:var(--ink)}
 .ping .lat{color:var(--faint)}
 
 .cursorline{color:var(--dim)}
