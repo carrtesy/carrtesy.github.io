@@ -500,13 +500,13 @@ async function bootSequence(){
             cur.setAttribute('aria-hidden','true');
             cmdEl.after(cur);
             await typeInto(cmdEl, text, 11);
-            await sleep(120);
+            await sleep(450);   // let the command sit for a beat before its output appears
             cur.remove();
         }
         if (comment){ comment.style.transition = 'opacity .3s'; comment.style.opacity = ''; }
         const out = b.querySelector('.out');
         if (out) out.classList.add('show');
-        await sleep(230);
+        await sleep(300);
     }
 }
 loadData();
