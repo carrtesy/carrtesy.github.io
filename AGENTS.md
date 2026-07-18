@@ -124,6 +124,13 @@ under `prefers-reduced-motion`.
   `pdf`/`blogUrl` when `links` is empty)
 - **Theme toggle**: button in the terminal titlebar switches dark ↔ light terminal
   palettes (`data-theme` on `<html>`, persisted in localStorage; dark is default)
+- **Boot sequence**: main-pane commands are typed character by character, each
+  output revealed after a beat; ends with `run tommy.sh` — a Claude-Code-style
+  ✳ spinner cycling current-work phrases (`Building AI for domain experts…`,
+  `Brewing coffee…`, one `Combobulating…` homage) with an elapsed-seconds counter,
+  finishing after ~10s with a ✔ checklist and a say-hi email line. Esc (or tap)
+  interrupts (`⎿ Interrupted · tommy went for coffee ☕`); an open viewer pane's
+  Esc-to-close takes priority. Clicking the idle prompt re-runs it.
 - **First-author badge**: derived from `authors` markup — `<strong>` first → `1st author`,
   `<strong>…*</strong>` → `co-1st`
 - **Fake commit hashes**: deterministic hash of title+organization; first career entry

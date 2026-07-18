@@ -52,7 +52,7 @@
                 <ul class="out ping" id="ping-list"></ul>
             </section>
 
-            <div class="block cursorline"><b style="color:var(--ok);font-weight:400">dongmin@lgai</b>:<i style="color:var(--amber);font-style:normal">~</i> $ <span class="cursor" aria-hidden="true"></span></div>
+            <div class="block" id="routine"></div>
         </div>
 
         <!-- right: viewer pane (split on wide screens, floating terminal modal on narrow) -->
@@ -484,6 +484,7 @@ async function bootSequence(){
             b.classList.add('on');
             b.querySelectorAll('.out').forEach(o => o.classList.add('show'));
         });
+        runRoutine();
         return;
     }
     await sleep(150);
@@ -508,6 +509,92 @@ async function bootSequence(){
         if (out) out.classList.add('show');
         await sleep(300);
     }
+    runRoutine();
+}
+
+// ── run tommy.sh — claude-code-style status spinner ──
+const ROUTINE_WORDS = [
+    'Building AI for domain experts…',   // always shown first
+    'Talking with domain experts…',
+    'Researching agentic AI…',
+    'Rolling out AI with customers…',
+    'Visiting factory floors…',
+    'Brewing coffee…',
+    'Thinking hard…',
+    'Combobulating…',
+];
+const ROUTINE_RESULT = [
+    'domain experts: happier than yesterday',
+    'agentic AI research: in progress',
+    'customer AI projects: shipping',
+    'coffee: refilled',
+];
+const routineEl = document.getElementById('routine');
+let routineRunning = false;
+
+async function runRoutine(){
+    if (routineRunning) return;
+    routineRunning = true;
+    routineEl.classList.add('on');
+    routineEl.innerHTML = '';
+
+    const line = document.createElement('div');
+    line.className = 'prompt';
+    line.innerHTML = '<b>dongmin@lgai</b>:<i>~</i> $ <span class="cmd"></span><span class="cursor" aria-hidden="true"></span>';
+    routineEl.appendChild(line);
+    const cmdEl = line.querySelector('.cmd');
+    if (reduced) cmdEl.textContent = 'run tommy.sh';
+    else { await typeInto(cmdEl, 'run tommy.sh', 11); await sleep(400); }
+    line.querySelector('.cursor').remove();
+
+    const spin = document.createElement('div');
+    spin.className = 'spinline';
+    spin.innerHTML = '<span class="spinicon" aria-hidden="true">✳</span> <span class="spinword"></span> <span class="spinmeta"></span>';
+    routineEl.appendChild(spin);
+    const wordEl = spin.querySelector('.spinword');
+    const metaEl = spin.querySelector('.spinmeta');
+    const hint = matchMedia('(pointer: coarse)').matches ? 'tap to interrupt' : 'esc to interrupt';
+
+    const words = [ROUTINE_WORDS[0], ...ROUTINE_WORDS.slice(1).sort(() => Math.random() - 0.5)];
+    let wi = 0, sec = 0, done = false;
+    const setWord = () => {
+        wordEl.textContent = words[wi++ % words.length];
+        spin.classList.remove('pop'); void spin.offsetWidth; spin.classList.add('pop');
+    };
+    setWord();
+    metaEl.textContent = `(0s · ${hint})`;
+    const secT = setInterval(() => { sec++; metaEl.textContent = `(${sec}s · ${hint})`; }, 1000);
+    const wordT = setInterval(setWord, 3200);
+
+    const finish = interrupted => {
+        if (done) return;
+        done = true;
+        clearInterval(secT); clearInterval(wordT);
+        document.removeEventListener('keydown', onEsc);
+        spin.remove();
+        const out = document.createElement('div');
+        out.className = 'routine-out';
+        out.innerHTML = interrupted
+            ? '<div class="rline">⎿&nbsp; Interrupted · tommy went for coffee ☕</div>'
+            : ROUTINE_RESULT.map((r, i) =>
+                `<div class="rline">${i === 0 ? '⎿&nbsp;' : '&nbsp;&nbsp;&nbsp;'} <span class="rok">✔</span> ${r}</div>`).join('')
+              + `<div class="rline">&nbsp;&nbsp;&nbsp;&nbsp; done — say hi: <a href="mailto:${esc(profileData.email)}">${esc(profileData.email)}</a></div>`;
+        routineEl.appendChild(out);
+        const idle = document.createElement('div');
+        idle.className = 'prompt idleprompt';
+        idle.title = 'run tommy.sh again';
+        idle.innerHTML = '<b>dongmin@lgai</b>:<i>~</i> $ <span class="cursor" aria-hidden="true"></span>';
+        idle.addEventListener('click', () => runRoutine());
+        routineEl.appendChild(idle);
+        routineRunning = false;
+    };
+    // esc interrupts the spinner — but closing an open viewer pane takes priority
+    const onEsc = e => { if (e.key === 'Escape' && !term.classList.contains('split')) finish(true); };
+    document.addEventListener('keydown', onEsc);
+    spin.addEventListener('click', () => finish(true));
+
+    if (reduced){ finish(false); return; }
+    setTimeout(() => finish(false), 10500 + Math.random() * 2500);
 }
 loadData();
 </script>
