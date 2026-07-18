@@ -456,12 +456,57 @@ async function loadData(){
         renderPublications(publications);
         renderFooter(footer);
 
-        const blocks = [...document.querySelectorAll('.block')];
-        if (reduced) blocks.forEach(b => b.classList.add('on'));
-        else blocks.forEach((b, i) => setTimeout(() => b.classList.add('on'), 180 + i * 200));
+        bootSequence();
     } catch (error) {
         console.error('Error loading data:', error);
-        document.querySelectorAll('.block').forEach(b => b.classList.add('on'));
+        document.querySelectorAll('.block').forEach(b => {
+            b.classList.add('on');
+            b.querySelectorAll('.out').forEach(o => o.classList.add('show'));
+        });
+    }
+}
+
+// boot: type each main-pane command, then reveal its output, in sequence
+function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+function typeInto(el, text, speed){
+    return new Promise(res => {
+        let i = 0;
+        (function t(){
+            el.textContent = text.slice(0, ++i);
+            if (i < text.length) setTimeout(t, speed); else res();
+        })();
+    });
+}
+async function bootSequence(){
+    const blocks = [...document.querySelectorAll('#mainpane .block')];
+    if (reduced){
+        blocks.forEach(b => {
+            b.classList.add('on');
+            b.querySelectorAll('.out').forEach(o => o.classList.add('show'));
+        });
+        return;
+    }
+    await sleep(150);
+    for (const b of blocks){
+        const cmdEl = b.querySelector('.cmd');
+        const comment = b.querySelector('.prompt .comment');
+        if (comment) comment.style.opacity = '0';
+        b.classList.add('on');
+        if (cmdEl){
+            const text = cmdEl.textContent;
+            cmdEl.textContent = '';
+            const cur = document.createElement('span');
+            cur.className = 'cursor';
+            cur.setAttribute('aria-hidden','true');
+            cmdEl.after(cur);
+            await typeInto(cmdEl, text, 11);
+            await sleep(120);
+            cur.remove();
+        }
+        if (comment){ comment.style.transition = 'opacity .3s'; comment.style.opacity = ''; }
+        const out = b.querySelector('.out');
+        if (out) out.classList.add('show');
+        await sleep(230);
     }
 }
 loadData();

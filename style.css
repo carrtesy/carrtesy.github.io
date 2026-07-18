@@ -128,7 +128,8 @@ body{
 .prompt b{color:var(--ok);font-weight:400}
 .prompt i{color:var(--amber);font-style:normal}
 .cmd{color:var(--ink)}
-.out{margin-top:14px}
+.out{margin-top:14px;opacity:0;transform:translateY(2px);transition:opacity .3s ease,transform .3s ease}
+.out.show{opacity:1;transform:none}
 .comment{color:var(--faint)}
 a{color:var(--amber);text-decoration:none;border-bottom:1px dashed var(--amber-deep)}
 a:hover{background:rgba(255,180,84,.12)}
@@ -238,6 +239,7 @@ footer b{color:var(--amber);font-weight:400}
 .block.on{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .block{opacity:1;transform:none;transition:none}
+  .out{opacity:1;transform:none;transition:none}
   .cursor{animation:none}
   .vcontent{transition:none}
 }
