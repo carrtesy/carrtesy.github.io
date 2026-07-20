@@ -430,7 +430,7 @@ function renderPublications(pubs){
 }
 
 function renderFooter(data){
-    document.getElementById('footer-copy').textContent = `© ${data.year} ${data.name} · exit code 0`;
+    document.getElementById('footer-copy').textContent = `© ${data.year} ${data.name}`;
 
     // visitor count from GoatCounter's public counter endpoint (silently skipped on failure)
     const gc = document.querySelector('script[data-goatcounter]');
@@ -571,21 +571,27 @@ async function runRoutine(){
     const metaEl = spin.querySelector('.spinmeta');
     const hint = matchMedia('(pointer: coarse)').matches ? 'tap to interrupt' : 'esc to interrupt';
 
-    const words = [ROUTINE_WORDS[0], ...ROUTINE_WORDS.slice(1).sort(() => Math.random() - 0.5)];
-    let wi = 0, sec = 0, done = false;
-    const setWord = () => {
-        wordEl.textContent = words[wi++ % words.length];
+    // three phrases, each shown in full: the mission, one current-work item,
+    // then a whimsical claude-ish one right before the checklist
+    const workWords = ROUTINE_WORDS.slice(1, 5);
+    const funWords = ROUTINE_WORDS.slice(5);
+    const words = [
+        ROUTINE_WORDS[0],
+        workWords[Math.floor(Math.random() * workWords.length)],
+        funWords[Math.floor(Math.random() * funWords.length)],
+    ];
+    let sec = 0, done = false;
+    const setWord = w => {
+        wordEl.textContent = w;
         spin.classList.remove('pop'); void spin.offsetWidth; spin.classList.add('pop');
     };
-    setWord();
     metaEl.textContent = `(0s · ${hint})`;
     const secT = setInterval(() => { sec++; metaEl.textContent = `(${sec}s · ${hint})`; }, 1000);
-    const wordT = setInterval(setWord, 3200);
 
     const finish = interrupted => {
         if (done) return;
         done = true;
-        clearInterval(secT); clearInterval(wordT);
+        clearInterval(secT);
         document.removeEventListener('keydown', onEsc);
         spin.remove();
         const out = document.createElement('div');
@@ -593,8 +599,7 @@ async function runRoutine(){
         out.innerHTML = interrupted
             ? '<div class="rline">⎿&nbsp; Interrupted · tommy went for coffee ☕</div>'
             : ROUTINE_RESULT.map((r, i) =>
-                `<div class="rline">${i === 0 ? '⎿&nbsp;' : '&nbsp;&nbsp;&nbsp;'} <span class="rok">✔</span> ${r}</div>`).join('')
-              + `<div class="rline">&nbsp;&nbsp;&nbsp;&nbsp; done — say hi: <a href="mailto:${esc(profileData.email)}">${esc(profileData.email)}</a></div>`;
+                `<div class="rline">${i === 0 ? '⎿&nbsp;' : '&nbsp;&nbsp;&nbsp;'} <span class="rok">✔</span> ${r}</div>`).join('');
         routineEl.appendChild(out);
         const idle = document.createElement('div');
         idle.className = 'prompt idleprompt';
@@ -610,7 +615,14 @@ async function runRoutine(){
     spin.addEventListener('click', () => finish(true));
 
     if (reduced){ finish(false); return; }
-    setTimeout(() => finish(false), 10500 + Math.random() * 2500);
+    (async () => {
+        for (const w of words){
+            if (done) return;
+            setWord(w);
+            await sleep(3600);
+        }
+        finish(false);
+    })();
 }
 loadData();
 </script>
