@@ -597,7 +597,7 @@ async function runRoutine(){
         const out = document.createElement('div');
         out.className = 'routine-out';
         out.innerHTML = interrupted
-            ? '<div class="rline">⎿&nbsp; Interrupted · tommy went for coffee ☕</div>'
+            ? `<div class="rline">⎿&nbsp; Interrupted · oh, got something to tell me? feel free to reach out — <a href="mailto:${esc(profileData.email)}">${esc(profileData.email)}</a> 😊</div>`
             : ROUTINE_RESULT.map((r, i) =>
                 `<div class="rline">${i === 0 ? '⎿&nbsp;' : '&nbsp;&nbsp;&nbsp;'} <span class="rok">✔</span> ${r}</div>`).join('');
         routineEl.appendChild(out);
